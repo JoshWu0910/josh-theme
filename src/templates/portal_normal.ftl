@@ -23,12 +23,12 @@
 <div class="container-fluid" id="wrapper">
 
 	<!--======================================================== header ========================================================-->
-	<header> <!--id="banner" role="banner"-->
+	<header><!-- id="banner" role="banner"-->
 			
 
 			<div class="navbar">
 
-				<div class="navbar-menu-title">
+				<div class="navbar-menu-left">
 					<h2 class="site-title">${site_name}</h1>
 				</div>
 

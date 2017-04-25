@@ -12,7 +12,6 @@
 
 /* navbar classes should contain left and right elements. Left is logo/site name. right side is the menu bar. */
 .navbar {
-	margin: 0px 0px 0px 10%;
 	color: #fff;
 	background: rgba(19,30,38,0.85);
 	position: fixed;
@@ -23,6 +22,7 @@
 	float: left;
 	font-size: 1.333em;
 	text-transform: uppercase;
+	margin-top: 30px;
 
 }
 .navbar-menu-right li {
@@ -38,14 +38,16 @@
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
+	padding: 10px;
 }
 
 .navbar li a:hover {
 	color: #DAB485; /*peachy color*/
 }
 
-.navbar-menu-right ul {
+.navbar-menu-right {
 	float:right;
+	margin-top: 30px;
 }
 
 .jumbotron-picture {
