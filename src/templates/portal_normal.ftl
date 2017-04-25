@@ -24,17 +24,33 @@
 
 	<!--======================================================== header ========================================================-->
 	<header id="banner" role="banner">
+		<div class="container" id="top-menu">
 			
-		<#if !is_signed_in>
-			<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-		</#if>
+			<div class="header-bar">
+				<div id="company-title" class="navbar">VARIABLE HOLDER</div>
+				<div id="menu" class="navbar">RIGHT MENU</div>
 
-		<#if has_navigation && is_setup_complete>
-			<#include "${full_templates_path}/navigation.ftl" />
-		</#if>
+				<div id="login" class="navbar">
+						<#if !is_signed_in>
+							<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
+						</#if>
 
+						<#if has_navigation && is_setup_complete>
+							<#include "${full_templates_path}/navigation.ftl" />
+						</#if>
+					
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="jumbotron-picture">
+			<div class="background-box"/>
+		</div>
 	</header>
 
+	
 
 	<p> THIS IS SOME TEXT </p>
 	<section id="content">
