@@ -27,9 +27,15 @@
 		<div class="container" id="top-menu">
 			
 			<div class="header-bar">
-				<div id="company-title" class="navbar">VARIABLE HOLDER</div>
-				<div id="menu" class="navbar">RIGHT MENU</div>
-
+				<div id="company-title" class="navbar">
+					<h1>${site_name}</h1>
+				</div>
+				<div id="menu" class="navbar">
+					<h4><a href="#">Menu Item</a></h4>
+					<h4><a href="#">Menu Item</a></h4>
+					<h4><a href="#">Menu Item</a></h4>
+					<h4><a href="#">Menu Item</a></h4>
+				</div>
 				<div id="login" class="navbar">
 						<#if !is_signed_in>
 							<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>

@@ -6,7 +6,7 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 * {
-
+	border: 1px solid red;
 }
 
 #banner {
@@ -14,44 +14,58 @@
 
 }
 #top-menu {
-
+	background-color: rgba(19,30,38,0.85);
+	left: 0;
+	width: 100%;
+	height: 100px;
+	position: fixed;
+	padding-top: 15px;
 }
 
 /* navbar classes should contain left and right elements. Left is logo/site name. right side is the menu bar. */
 .header-bar {	
-	background-color: rgba(19,30,38,0.85);
-	position: fixed;
-	left: 0;
-	display: inline;
+	position: center;
+	color: white;
 	width: 100%;
-	margin-top: -30px;
+	padding-top: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
 
+.header-bar a:hover {
+	color: #DAB485;
+	text-decoration: none;
 }
 
 .navbar {
-	height: 60px;
+	
 }
 
 #company-title {
-	float: left;
-	width: 30%;
+	display: inline-block;
+	color: white;
 }
 
 #login {
-	float: right;
-	width: 30%;
-	display: inline;
+	color: white;
+	display: inline-block;
 }
 
 #menu {
-	position: relative;
-	width: 40%;
+	color: white;
+	display: inline-block;
+
 }
 
+#menu h4 {
+	display: inline-block;
+}
 
+#menu h4 a:hover {
+}
 
 .background-box {
-	width: cover;
+	width: 100%;
 	height: 800px;
 }
 
