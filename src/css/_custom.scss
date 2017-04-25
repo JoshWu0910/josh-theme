@@ -6,61 +6,8 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 * {
-	border: 1px dotted #000000;
+	
 	font-family: "gotham_boldregular";
 }
 
 /* navbar classes should contain left and right elements. Left is logo/site name. right side is the menu bar. */
-.navbar {
-	color: #fff;
-	background: rgba(19,30,38,0.85);
-	position: fixed;
-	height: 60px;
-}
-
-.navbar-menu-left {
-	float: left;
-	font-size: 1.333em;
-	text-transform: uppercase;
-	margin-top: 30px;
-
-}
-.navbar-menu-right li {
-	background: rgba(19,30,38,0.85);
-	display: inline;
-	text-align: center;
-	list-style: none;
-	float: left;
-	font-size: 1.2em;
-}
-
-.navbar li a {
-	text-transform: uppercase;
-	color: #fff;
-	text-decoration: none;
-	padding: 10px;
-}
-
-.navbar li a:hover {
-	color: #DAB485; /*peachy color*/
-}
-
-.navbar-menu-right {
-	float:right;
-	margin-top: 30px;
-}
-
-.jumbotron-picture {
-	background-image: url("images/mountains.jpg");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	/*height: 50%;*/
-	width: 100%;
-}
-
-
-
-
-.row {
-	height: 60px;
-}

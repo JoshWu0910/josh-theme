@@ -23,41 +23,8 @@
 <div class="container-fluid" id="wrapper">
 
 	<!--======================================================== header ========================================================-->
-	<header><!-- id="banner" role="banner"-->
+	<header id="banner" role="banner">
 			
-
-			<div class="navbar">
-
-				<div class="navbar-menu-left">
-					<h2 class="site-title">${site_name}</h1>
-				</div>
-
-				<div class="navbar-menu-right">
-					<!-- Old heading
-					<h1 class="site-title">
-						<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-							<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" width="${site_logo_width}" />
-						</a>
-
-						<#if show_site_name>
-							<span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-								${site_name}
-							</span>
-						</#if>
-					</h1>-->
-
-					<ul><li><a href="#">Menu1</a></li>
-						<li><a href="#">Menu2</a></li>
-						<li><a href="#">Menu3</a></li>
-						<li><a href="#">Menu4</a></li>
-						<li><a href="#">Menu5</a></li>
-						<li><a href="#">Menu6</a></li>
-						<li><a href="#">Menu7</a></li></ul>
-				</div>
-
-			</div>
-		<div class="jumbotron-picture" style="height:500px"></div>	
-		
 		<#if !is_signed_in>
 			<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
 		</#if>
@@ -65,6 +32,7 @@
 		<#if has_navigation && is_setup_complete>
 			<#include "${full_templates_path}/navigation.ftl" />
 		</#if>
+
 	</header>
 
 
@@ -98,8 +66,6 @@
 			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
 	</footer>
-
-
 
 </div>
 
