@@ -7,6 +7,7 @@
 
 * {
 	border: 1px solid red;
+	background-color: rgba(19,30,38,0.1);
 }
 
 #banner {
@@ -17,7 +18,7 @@
 	background-color: rgba(19,30,38,0.85);
 	left: 0;
 	width: 100%;
-	height: 100px;
+	height: auto;
 	position: fixed;
 	padding-top: 15px;
 }
@@ -27,7 +28,6 @@
 	position: center;
 	color: white;
 	width: 100%;
-	padding-top: 15px;
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -35,6 +35,10 @@
 .header-bar a:hover {
 	color: #DAB485;
 	text-decoration: none;
+}
+
+.header-bar a {
+	color: white;
 }
 
 .navbar {
@@ -46,9 +50,20 @@
 	color: white;
 }
 
+.company-title-item {
+	padding: 5px;
+	margin: 5px;
+}
+
 #login {
 	color: white;
 	display: inline-block;
+}
+
+.login-item {
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
 }
 
 #menu {
@@ -57,16 +72,18 @@
 
 }
 
-#menu h4 {
+#menu div {
 	display: inline-block;
-}
-
-#menu h4 a:hover {
 }
 
 .background-box {
 	width: 100%;
-	height: 800px;
+	height: 1000px;
+}
+
+.menu-item {
+	padding: 5px;
+	margin: 5px;
 }
 
 .jumbotron-picture {
@@ -76,5 +93,5 @@
 	background-position: center;
 	background-size: cover;
 	top: 0;
-	margin: -50px -10px 0px -10px;
+	margin: 0px -10px 0px -10px;
 }
