@@ -105,5 +105,37 @@
 <!-- endinject -->
 
 </body>
-
+<!--
 </html>
+	<nav role="navigation" aria-labelledby="block-lapurd-main-menu-menu" id="block-lapurd-main-menu" class="block block-menu navigation menu--main">
+	<ul class="clearfix menu">
+		<li class="menu-item">
+			<a href="/drupal8/lapurd/">Home</a>
+		</li>
+		<li class="menu-item">
+			<a href="/drupal8/lapurd/about-us">About us</a>
+		</li>
+		<li class="menu-item menu-item--expanded">
+			<a href="/drupal8/lapurd/blog/large-image">Blog</a>
+			<ul class="menu">
+				<li class="menu-item">
+					<a href="/drupal8/lapurd/blog/grid-full-width">Grid Full Width</a>
+				</li>
+				<li class="menu-item">
+					<a href="/drupal8/lapurd/blog/grid-with-sidebar">Grid with sidebar</a>
+				</li>
+			</ul>
+
+		</li>
+		<li class="menu-item">
+			<a href="/drupal8/lapurd/portfolio">Portfolio</a>
+		</li>
+		<li class="menu-item">
+			<a href="/drupal8/lapurd/faqs">FAQS</a>
+		</li>
+		<li class="menu-item">
+			<a href="/drupal8/lapurd/contact">Contact</a>
+		</li>
+	</ul>
+</nav>
+-->
