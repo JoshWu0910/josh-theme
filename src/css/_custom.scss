@@ -6,8 +6,8 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 * {
-	/*border: 1px solid red;*/
-	background-color: rgba(19,30,38,0.1);
+	border: 1px solid red;
+	/*background-color: rgba(19,30,38,0.1)*/;
 }
 
 #banner {
@@ -15,23 +15,28 @@
 
 }
 #top-menu {
-	background-color: rgba(19,30,38,0.85);
+	background-color: rgba(19,30,38,0.70);
 	left: 0;
 	width: 100%;
 	height: auto;
 	position: fixed;
-	padding-top: 15px;
-	margin-top: -30px;
 }
 
-/* navbar classes should contain left and right elements. Left is logo/site name. right side is the menu bar. */
+.hidden {
+    display: none;
+}
+
+/* Start nav bar styling */
 .header-bar {	
-	position: center;
+	position: cover;
 	color: white;
-	width: 100%;
+	width: 60%;
 	text-decoration: none;
 	text-transform: uppercase;
-	padding-top: 30px;
+	padding: 10px 0px 10px 0px;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .header-bar a:hover {
@@ -45,7 +50,7 @@
 }
 
 .navbar {
-	
+	height: 50px;
 }
 
 #company-title {
@@ -54,8 +59,7 @@
 }
 
 .company-title-item {
-	padding: 5px;
-	margin: 5px;
+
 }
 
 #login {
@@ -63,10 +67,9 @@
 	display: inline-block;
 }
 
-.login-item {
+.login-item div {
 	display: inline-block;
-	padding: 5px;
-	margin: 5px;
+
 }
 
 #menu {
@@ -75,8 +78,13 @@
 
 }
 
-#menu div {
+#menu li {
 	display: inline-block;
+}
+
+.menu-right { /* block to group menu nav bar and log in */
+	float: right;
+	margin: auto;
 }
 
 .background-box {
@@ -85,19 +93,23 @@
 }
 
 .menu-item {
-	transition: all 0.3s ease-out;
-	margin: 5px;
+	/*transition: all 0.3s ease-out;*/
     display: inline-block;
 }
 
 .menu-item:hover {
+	-moz-animation: all 0.3s ease-out;
+	animation: all 0.3s ease-out;
+	-webkit-animation: all 0.3s ease-out;
 	border-top-style: solid;
 	border-top-width: 5px;
 	border-color: #DAB485;
-
 }
+/* end nav bar styling */
 
+/* Jumbo tron backgroudn image */
 .jumbotron-picture {
+	background-color: blue;
 	background-image: url("images/mountains2.jpg");
 	background-attachment: relative;
 	background-repeat: no-repeat;
@@ -106,6 +118,8 @@
 	top: 0;
 	margin: -30px -15px 0px -15px;
 }
+
+/* end backgroudn image */
 
 /*{
     background-color: #dab485;

@@ -4,6 +4,8 @@
 
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
 
+
+
 <head>
 	<title>${the_title} - ${company_name}</title>
 
@@ -29,26 +31,29 @@
 			<div class="header-bar">
 				<div id="company-title" class="navbar">
 					<div class="company-title-item">
-						<h1>${site_name}</h1>
+						<h3>${site_name}</h3>
 					</div>	
 				</div>
-				<div id="menu" class="navbar">
-					<div class="menu-item"><a href="#">Menu Item</a></div>
-					<div class="menu-item"><a href="#">Menu Item</a></div>
-					<div class="menu-item"><a href="#">Menu Item</a></div>
-					<div class="menu-item"><a href="#">Menu Item</a></div>
-				</div>
-				<div id="login" class="navbar">
-					<div class="login-item">
-						<div>
-							<#if !is_signed_in>
-								<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-							</#if>
-						</div>
-						<div>
-							<#if has_navigation && is_setup_complete>
-								<#include "${full_templates_path}/navigation.ftl" />
-							</#if>
+				
+				<div class="menu-right">
+					<ul id="menu" class="navbar">
+						<li class="menu-item"><a href="#">Menu Item</a></li>
+						<li class="menu-item"><a href="#">Menu Item</a></li>
+						<li class="menu-item"><a href="#">Menu Item</a></li>
+						<li class="menu-item"><a href="#">Menu Item</a></li>
+					</ul>
+					<div id="login" class="navbar">
+						<div class="login-item">
+							<div>
+								<#if !is_signed_in>
+									<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
+								</#if>
+							</div>
+							<div>
+								<#if has_navigation && is_setup_complete>
+									<#include "${full_templates_path}/navigation.ftl" />
+								</#if>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -139,3 +144,6 @@
 	</ul>
 </nav>
 -->
+<script type='text/javascript'>
+	window.onscroll = fadeNav;
+</script>
