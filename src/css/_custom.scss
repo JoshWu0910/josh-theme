@@ -5,109 +5,6 @@
 
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
-* {
-	border: 1px solid red;
-	/*background-color: rgba(19,30,38,0.1)*/;
-}
-
-#banner {
-	width: 100%;
-
-}
-#top-menu {
-	background-color: rgba(19,30,38,0.70);
-	left: 0;
-	width: 100%;
-	height: auto;
-	position: fixed;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Start nav bar styling */
-.header-bar {	
-	position: cover;
-	color: white;
-	width: 60%;
-	text-decoration: none;
-	text-transform: uppercase;
-	padding: 10px 0px 10px 0px;
-	margin: auto;
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
-.header-bar a:hover {
-	color: #DAB485;
-	text-decoration: none;
-
-}
-
-.header-bar a {
-	color: white;
-}
-
-.navbar {
-	height: 50px;
-}
-
-#company-title {
-	display: inline-block;
-	color: white;
-}
-
-.company-title-item {
-
-}
-
-#login {
-	color: white;
-	display: inline-block;
-}
-
-.login-item div {
-	display: inline-block;
-
-}
-
-#menu {
-	color: white;
-	display: inline-block;
-
-}
-
-#menu li {
-	display: inline-block;
-}
-
-.menu-right { /* block to group menu nav bar and log in */
-	float: right;
-	margin: auto;
-}
-
-.background-box {
-	width: 100%;
-	height: 700px;
-}
-
-.menu-item {
-	/*transition: all 0.3s ease-out;*/
-    display: inline-block;
-}
-
-.menu-item:hover {
-	-moz-animation: all 0.3s ease-out;
-	animation: all 0.3s ease-out;
-	-webkit-animation: all 0.3s ease-out;
-	border-top-style: solid;
-	border-top-width: 5px;
-	border-color: #DAB485;
-}
-/* end nav bar styling */
-
-/* Jumbo tron backgroudn image */
 .jumbotron-picture {
 	background-color: blue;
 	background-image: url("images/mountains2.jpg");
@@ -119,18 +16,11 @@
 	margin: -30px -15px 0px -15px;
 }
 
-/* end backgroudn image */
+div {
+	background-color: rgba(19,30,38,0.1);
+}
 
-/*{
-    background-color: #dab485;
-    bottom: 0;
-    content: "";
-    height: 4px;
-    left: 50%;
-    margin: 0 auto;
-    position: absolute;
-    top: auto;
-    transform: translate(-50%,-50px);
-    transition: width 0.3s ease 0s;
-    width: 0;
-}*/
+/*debug*/
+a {
+	background-color: rgba(100,0,20,0.1);
+}

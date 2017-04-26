@@ -4,8 +4,6 @@
 
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
 
-
-
 <head>
 	<title>${the_title} - ${company_name}</title>
 
@@ -68,8 +66,6 @@
 	</header>
 
 	
-
-	<p> THIS IS SOME TEXT </p>
 	<section id="content">
 		<h1 class="hide-accessible">${the_title}</h1>
 
@@ -144,6 +140,3 @@
 	</ul>
 </nav>
 -->
-<script type='text/javascript'>
-	window.onscroll = fadeNav;
-</script>
