@@ -87,13 +87,14 @@
 .menu-item {
 	transition: all 0.3s ease-out;
 	margin: 5px;
-    transform: translate(-50%,-50px);
+    display: inline-block;
 }
 
 .menu-item:hover {
 	border-top-style: solid;
 	border-top-width: 5px;
 	border-color: #DAB485;
+
 }
 
 .jumbotron-picture {
@@ -105,3 +106,17 @@
 	top: 0;
 	margin: -30px -15px 0px -15px;
 }
+
+/*{
+    background-color: #dab485;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: auto;
+    transform: translate(-50%,-50px);
+    transition: width 0.3s ease 0s;
+    width: 0;
+}*/
