@@ -26,13 +26,18 @@
 		<div id="header">
 			
 			<div class="container">
+
+
 				<div class="region region-header">
+
 					<div id="company-branding" class="block">
 						<div class="site-name">>
 							<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
 						</div>	
 					</div>
 					
+
+
 					<nav id="nav-menu-top" class="block block-menu">
 						<ul class="menu">
 							<li class="menu-item--active-trail">
@@ -57,7 +62,11 @@
 							</li>
 						</ul>
 					</nav>
-					<nav id="login" class="block-menu" style="display:none"> <!--DEBUG hidden-->
+
+
+
+
+					<nav id="login" class="block-menu">
 						<ul class="menu">
 							<li class="menu-item">
 								<#if !is_signed_in>
@@ -70,10 +79,12 @@
 							</li>
 						</div>
 					</nav>
+
+
+
+
 				</div>
 			</div>
-
-
 		</div>
 
 		<div class="jumbotron-picture">
@@ -82,7 +93,7 @@
 	</header>
 
 	
-	<section id="content">
+	<section id="content" style="background-color: transparent">
 		<h1 class="hide-accessible">${the_title}</h1>
 		<div class="section1">
 			<p>
