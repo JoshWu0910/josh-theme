@@ -31,7 +31,7 @@
 				<div class="region region-header">
 
 					<div id="company-branding" class="block">
-						<div class="site-name">>
+						<div class="site-name">
 							<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
 						</div>	
 					</div>

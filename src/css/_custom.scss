@@ -6,9 +6,17 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 /* Entire Page Styles */
+@font-face {
+	font-family: 'gotham_boldregular';
+	src: url('fonts/Gotham Bold Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'gotham_lightregular';
+	src: url('fonts/Gotham Light Regular.otf') format('truetype');
+}
 
 html {
-	font-family: sans-serif;
+	font-family: "gotham_lightregular", sans-serif;
 }
 
 body {
@@ -34,10 +42,11 @@ div, nav, ul {
 
 p {
 	background-color: rgba(100,100,100,0.2); /*debug*/
+	position: relative;
 }
 
 li {
-	/*background-color: yellow; /*debug*/ 
+	list-style: none; /*background-color: yellow; /*debug*/ 
 }
 
 #wrapper {
@@ -53,8 +62,11 @@ li {
 
 	p {
 		display: inline-block; /*debug*/
-		width: 10%;
+		width: 15%;
 		margin: auto;
+		left: auto;
+		right: auto;
+		padding: 5px;
 	}
 }
 
@@ -70,12 +82,22 @@ li {
 	z-index: 99;
 	padding-top: 25px;
 	position: fixed;
+	height: 90px;
 	left: 0;
 	right: 0;
+	background-color: rgba(19,30,38,0.85); /* Will be transparent and not transparent upon scroll later */
+	
+	a {
+		color: #fff;
+	}
+
+	a:hover {
+		color: #dab485;
+	}
 }
 
 #header .container .region-header {
-	width: 70%;
+	width: 60%;
 }
 
 #company-branding {
@@ -91,6 +113,8 @@ li {
 
 #header .block-menu {
 	float:right;
+	display: inline-block;
+	width: auto;
 }
 
 
@@ -99,17 +123,18 @@ li {
 	#header #nav-menu-top {
 		display:inline-block;
 		padding-top: 10px;
+		width: auto;
 	}
 
 	#nav-menu-top > ul.menu {
 		margin:0;
 	}
 
-	#nav-menu-top > ul.menu li.menu-item--active-trail a {
+	#nav-menu-top > ul.menu > li.menu-item--active-trail a {
 		color: #dab485;
 	}
 
-	#nav-menu-top > ul.menu li.menu-item--active-trail a:before {
+	#nav-menu-top > ul.menu > li.menu-item--active-trail a:before {
 		width: 100%;
 	}
 
@@ -121,11 +146,11 @@ li {
 		position: relative;
 	}
 
-	#nav-menu-top > ul.menu  li a {
+	#nav-menu-top > ul.menu > li a {
 		position: relative;
 	}
 
-	#nav-menu-top > ul.menu  li a:before {
+	#nav-menu-top > ul.menu > li a:before {
 		background-color: #dab485;
 		bottom: 0;
 		content: "";
@@ -138,6 +163,26 @@ li {
 		transition: width 0.3s ease 0s;
 		width: 0;
 	}
+
+	#nav-menu-top > ul.menu li.menu-item--expanded { /* need to hide dropdown UL, but display the li. */
+		display: none;
+	}
+
+	#nav-menu-top > ul.menu li.menu-item--expanded:hover {
+		display: block;
+	}
+
+	.region-header > nav.block-menu {
+		display: inline-block;
+		width: auto;
+	}
+
+	#login {
+		display: inline-block;
+	}
+
+
+
 }
 
 
@@ -177,6 +222,6 @@ li {
 	height: 700px;
 	z-index: 0;
 	width: 100%;
-
+	background-color: rgba(19,30,38,0.85); /* overlay over image */
 }
 
