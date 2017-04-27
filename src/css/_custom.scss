@@ -23,7 +23,7 @@ body {
 	margin: 0;
 }
 
-header, footer, main, menu, nav, section {
+header, footer, main, menu, nav, section, .block {
 	display: block;
 }
 
@@ -52,7 +52,7 @@ li {
 #wrapper {
 	top: 0;
 	margin: 0;
-	margin-top: -28px;
+	margin: -28px;
 }
 
 .section1 {
@@ -96,13 +96,8 @@ li {
 	}
 }
 
-#header .container .region-header {
-	width: 60%;
-}
-
 #company-branding {
 	display: inline-block;
-	padding-top: 10px;
 }
 
 #header .site-name a {
@@ -112,7 +107,7 @@ li {
 }
 
 #header .block-menu {
-	float:right;
+	float: right;
 	display: inline-block;
 	width: auto;
 }
@@ -126,8 +121,14 @@ li {
 		width: auto;
 	}
 
+	#header .region-header {
+		margin: auto;
+		width: auto;
+	}
+
 	#nav-menu-top > ul.menu {
-		margin:0;
+		margin: 0;
+		position: relative;
 	}
 
 	#nav-menu-top > ul.menu > li.menu-item--active-trail a {
@@ -142,7 +143,6 @@ li {
 		list-style:none;
 		float:left;
 		margin: 0 13px;
-		padding-top: 0;
 		position: relative;
 	}
 
@@ -164,26 +164,29 @@ li {
 		width: 0;
 	}
 
-	#nav-menu-top > ul.menu li.menu-item--expanded { /* need to hide dropdown UL, but display the li. */
+	#nav-menu-top > ul.menu li.menu-item--expanded ul { /* need to hide dropdown UL, but display the li. */
 		display: none;
 	}
 
-	#nav-menu-top > ul.menu li.menu-item--expanded:hover {
+	#nav-menu-top > ul.menu li.menu-item--expanded:hover ul {
 		display: block;
 	}
 
-	.region-header > nav.block-menu {
-		display: inline-block;
-		width: auto;
+	#login {
+		padding-top: 10px;
+		margin-left: 15px;
 	}
 
-	#login {
+	#login .menu-item-child {
 		display: inline-block;
 	}
+
 
 
 
 }
+
+
 
 
 

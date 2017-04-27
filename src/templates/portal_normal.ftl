@@ -37,49 +37,47 @@
 					</div>
 					
 
+					<div class="container" style="display:inline-block; width:auto; float:right">
+						<nav id="login" class="block-menu">
+							<div class="menu-item-child">
+							<#if !is_signed_in>
+								<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
+							</#if>
+							</div>
+							<div class="menu-item-child">
+							<#if has_navigation && is_setup_complete>
+								<#include "${full_templates_path}/navigation.ftl" />
+							</#if>
+							</div>
+						</nav>
 
-					<nav id="nav-menu-top" class="block block-menu">
-						<ul class="menu">
-							<li class="menu-item--active-trail">
-								<a href="#">Home</a>
-							</li>
-							<li class="menu-item menu-item--expanded"> <!--"expanded" tag becuase this menu item has a dropdown menu-->
-								<a href="#">Menu Item2</a>
-								<ul class="menu">
-									<li class="menu-item">
-										<a href="#">dropdown1</a>
-									</li>
-									<li class="menu-item">
-										<a href="#">dropdown2</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item">
-								<a href="#">Menu Item3</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Menu Item4</a>
-							</li>
-						</ul>
-					</nav>
+						<nav id="nav-menu-top" class="block-menu">
+							<ul class="menu">
+								<li class="menu-item--active-trail">
+									<a href="#">Home</a>
+								</li>
+								<li class="menu-item menu-item--expanded"> <!--"expanded" tag becuase this menu item has a dropdown menu-->
+									<a href="#">Menu Item2</a>
+									<ul class="menu">
+										<li class="menu-item">
+											<a href="#">dropdown1</a>
+										</li>
+										<li class="menu-item">
+											<a href="#">dropdown2</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-item">
+									<a href="#">Menu Item3</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Menu Item4</a>
+								</li>
+							</ul>
+						</nav>
 
 
-
-
-					<nav id="login" class="block-menu">
-						<ul class="menu">
-							<li class="menu-item">
-								<#if !is_signed_in>
-									<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-								</#if>
-
-								<#if has_navigation && is_setup_complete>
-									<#include "${full_templates_path}/navigation.ftl" />
-								</#if>
-							</li>
-						</div>
-					</nav>
-
+					</div>
 
 
 
