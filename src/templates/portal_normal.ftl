@@ -22,38 +22,54 @@
 
 <div class="container-fluid" id="wrapper">
 
-	<!--======================================================== header ========================================================-->
 	<header id="banner" role="banner">
-		<div class="container" id="top-menu">
+		<div id="header">
 			
-			<div class="header-bar">
-				<div id="company-title" class="navbar">
-					<div class="company-title-item">
-						<h3>${site_name}</h3>
-					</div>	
-				</div>
-				
-				<div class="menu-right">
-					<ul id="menu" class="navbar">
-						<li class="menu-item"><a href="#">Menu Item</a></li>
-						<li class="menu-item"><a href="#">Menu Item</a></li>
-						<li class="menu-item"><a href="#">Menu Item</a></li>
-						<li class="menu-item"><a href="#">Menu Item</a></li>
-					</ul>
-					<div id="login" class="navbar">
-						<div class="login-item">
-							<div>
+			<div class="container">
+				<div class="region region-header">
+					<div id="company-branding" class="block">
+						<div class="site-name">>
+							<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
+						</div>	
+					</div>
+					
+					<nav id="nav-menu-top" class="block block-menu">
+						<ul class="menu">
+							<li class="menu-item--active-trail">
+								<a href="#">Home</a>
+							</li>
+							<li class="menu-item menu-item--expanded"> <!--"expanded" tag becuase this menu item has a dropdown menu-->
+								<a href="#">Menu Item2</a>
+								<ul class="menu">
+									<li class="menu-item">
+										<a href="#">dropdown1</a>
+									</li>
+									<li class="menu-item">
+										<a href="#">dropdown2</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu-item">
+								<a href="#">Menu Item3</a>
+							</li>
+							<li class="menu-item">
+								<a href="#">Menu Item4</a>
+							</li>
+						</ul>
+					</nav>
+					<nav id="login" class="block-menu" style="display:none"> <!--DEBUG hidden-->
+						<ul class="menu">
+							<li class="menu-item">
 								<#if !is_signed_in>
 									<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
 								</#if>
-							</div>
-							<div>
+
 								<#if has_navigation && is_setup_complete>
 									<#include "${full_templates_path}/navigation.ftl" />
 								</#if>
-							</div>
+							</li>
 						</div>
-					</div>
+					</nav>
 				</div>
 			</div>
 
@@ -68,6 +84,42 @@
 	
 	<section id="content">
 		<h1 class="hide-accessible">${the_title}</h1>
+		<div class="section1">
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
+			</p>
+			<p>
+			Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
+			</p>
+			<p>
+			Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+			</p>
+
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
+			</p>
+			<p>
+			Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
+			</p>
+			<p>
+			Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+			</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<nav id="breadcrumbs">
 			<@liferay.breadcrumbs />
