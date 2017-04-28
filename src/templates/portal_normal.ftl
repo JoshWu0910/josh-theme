@@ -9,6 +9,16 @@
 
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
+	<#if is_signed_in>
+		<style>
+		#wrapper {
+			padding-top:0 !important;
+		}
+
+		</style>
+	</#if>
+
+
 	<@liferay_util["include"] page=top_head_include />
 </head>
 
@@ -89,29 +99,40 @@
 
 	<section id="content" style="background-color: transparent">
 		<h1 class="hide-accessible">${the_title}</h1>
-		<div class="section1">
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
-			</p>
-			<p>
-			Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
-			</p>
-			<p>
-			Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
-			</p>
-
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
-			</p>
-			<p>
-			Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
-			</p>
-			<p>
-			Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
-			</p>
-
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>This is my Lapurd theme</h1>
+				<p>
+				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+				</p>
+			</div>
 		</div>
 
+		<div class="row">
+			<div class="col-md-6">
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
+				</p>
+				<p>
+				Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
+				</p>
+				<p>
+				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+				</p>
+			</div>
+			<div class="col-md-6">
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
+				</p>
+				<p>
+				Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
+				</p>
+				<p>
+				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+				</p>
+			</div>
+			
+		</div>
 
 
 
