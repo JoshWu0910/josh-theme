@@ -5,6 +5,10 @@
 
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
+/* Common Site Variables */
+$theme-tan: #DAB485;
+$theme-bg-blue: rgba(19,30,38,0.85);
+
 /* Entire Page Styles */
 @font-face {
 	font-family: 'gotham_boldregular';
@@ -37,11 +41,9 @@ a:active,a:hover {
 }
 
 div, nav, ul {
-	background-color: rgba(19,30,38,0.1); /*debug*/
 }
 
 p {
-	background-color: rgba(100,100,100,0.2); /*debug*/
 	position: relative;
 }
 
@@ -49,27 +51,15 @@ li {
 	list-style: none; /*background-color: yellow; /*debug*/ 
 }
 
+.text-center {
+	align-text: center;
+}
+
 #wrapper {
 	top: 0;
 	margin: 0;
-	margin: -28px;
+	margin-top: -28px;
 }
-
-.section1 {
-	background-color: rgba(200,100,0,0.2); /*debug*/
-	width: 80%;
-	margin: auto;
-
-	p {
-		display: inline-block; /*debug*/
-		width: 15%;
-		margin: auto;
-		left: auto;
-		right: auto;
-		padding: 5px;
-	}
-}
-
 
 /* End Entire Page Styles */
 
@@ -85,14 +75,14 @@ li {
 	height: 90px;
 	left: 0;
 	right: 0;
-	background-color: rgba(19,30,38,0.85); /* Will be transparent and not transparent upon scroll later */
+	background-color: $theme-bg-blue; /* Will be transparent and not transparent upon scroll later */
 	
 	a {
 		color: #fff;
 	}
 
 	a:hover {
-		color: #dab485;
+		color: $theme-tan;
 	}
 }
 
@@ -111,7 +101,6 @@ li {
 	display: inline-block;
 	width: auto;
 }
-
 
 
 @media (min-width: 992px) {
@@ -138,7 +127,7 @@ li {
 	}
 
 	#nav-menu-top > ul.menu > li.menu-item--active-trail a {
-		color: #dab485;
+		color: $theme-tan;
 	}
 
 	#nav-menu-top > ul.menu > li.menu-item--active-trail a:before {
@@ -157,7 +146,7 @@ li {
 	}
 
 	#nav-menu-top > ul.menu > li a:before {
-		background-color: #dab485;
+		background-color: $theme-tan;
 		bottom: 0;
 		content: "";
 		height: 4px;
@@ -199,9 +188,16 @@ li {
 		display: inline-block;
 	}
 
+	#content {
+		padding: 15px;
+	}
 
-
-	
+	.row {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin-left: 2em;
+		margin-right: 2em;
+	}
 }
 
 
@@ -236,13 +232,14 @@ li {
 	background-size: cover;
 	top: 0;
 	height: 700px;
-/*move sky up out of picture */
-	
+	margin-left: -28px;
+	margin-right: -28px;
 }
+
 .background-box { /* This creates space for the jumbotron picture to be displayed */
 	height: 700px;
 	z-index: 0;
 	width: 100%;
-	background-color: rgba(19,30,38,0.85); /* overlay over image */
+	background-color: $theme-bg-blue; /* overlay over image */
 }
 
