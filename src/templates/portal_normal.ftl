@@ -36,18 +36,17 @@
 						</div>	
 					</div>
 					
-
-					<div class="container" style="display:inline-block; width:auto; float:right">
+					<div class="container header-nav">
 						<nav id="login" class="block-menu">
 							<div class="menu-item-child">
-							<#if !is_signed_in>
-								<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-							</#if>
+								<#if !is_signed_in>
+									<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
+								</#if>
 							</div>
 							<div class="menu-item-child">
-							<#if has_navigation && is_setup_complete>
-								<#include "${full_templates_path}/navigation.ftl" />
-							</#if>
+								<#if has_navigation && is_setup_complete>
+									<#include "${full_templates_path}/navigation.ftl" />
+								</#if>
 							</div>
 						</nav>
 
@@ -65,6 +64,9 @@
 										<li class="menu-item">
 											<a href="#">dropdown2</a>
 										</li>
+										<li class="menu-item">
+											<a href="#">dropdown3</a>
+										</li>
 									</ul>
 								</li>
 								<li class="menu-item">
@@ -75,12 +77,7 @@
 								</li>
 							</ul>
 						</nav>
-
-
 					</div>
-
-
-
 				</div>
 			</div>
 		</div>
@@ -90,7 +87,6 @@
 		</div>
 	</header>
 
-	
 	<section id="content" style="background-color: transparent">
 		<h1 class="hide-accessible">${the_title}</h1>
 		<div class="section1">
