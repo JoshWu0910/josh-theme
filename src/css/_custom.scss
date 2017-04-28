@@ -8,6 +8,12 @@
 /* Common Site Variables */
 $theme-tan: #DAB485;
 $theme-bg-blue: rgba(19,30,38,0.85);
+$theme-bg-dark: #131e26;
+$theme-bg-light-1: #eaeaea;
+$theme-bg-light-2: #f6f6f6;
+$theme-bg-dropdown: #313a41;
+$p-text-color: #777777;
+$theme-title-text: #000;
 
 /* Entire Page Styles */
 @font-face {
@@ -19,15 +25,31 @@ $theme-bg-blue: rgba(19,30,38,0.85);
 	src: url('fonts/Gotham Light Regular.otf') format('truetype');
 }
 
+@font-face {
+	font-family: 'gotham_bookregular';
+	src: url('fonts/Gotham Book Regular.otf') format('truetype');
+}	
+
 html {
-	font-family: "gotham_lightregular", sans-serif;
+	font-family: "gotham_lightregular", sans-serif;	
+}
+
+::selection{
+	background: $theme-tan;
+	color: #fff;
 }
 
 body {
 	margin: 0;
 }
 
-header, footer, main, menu, nav, section, .block {
+header, 
+footer, 
+main, 
+menu, 
+nav, 
+section, 
+.block {
 	display: block;
 }
 
@@ -35,12 +57,15 @@ a {
 	background-color: transparent;
 }
 
-a:active,a:hover {
+a:active,
+a:hover {
 	outline: 0;
 	text-decoration: none;
 }
 
-div, nav, ul {
+div, 
+nav, 
+ul {
 }
 
 p {
@@ -68,7 +93,8 @@ li {
 /* Styles for Header */
 
 #header {
-	font-family:"gotham_boldregular"; /* need to add fonts to html */
+	font-family:"gotham_boldregular"; /* need to add fonts to 
+	html */
 	z-index: 99;
 	padding-top: 25px;
 	position: fixed;
@@ -158,6 +184,7 @@ li {
 		transition: width 0.3s ease 0s;
 		width: 0;
 	}
+	
 
 	#nav-menu-top > ul.menu li.menu-item--expanded ul { 
 		display: none;
@@ -165,7 +192,7 @@ li {
 
 	#nav-menu-top > ul.menu li.menu-item--expanded:hover ul {
 		display: block;
-		background-color: #313a41;
+		background-color: $theme-bg-dropdown;
 		float: left;
 		padding: 0;
 		padding: 0 15px 10px 15px;
@@ -190,39 +217,67 @@ li {
 
 	#content {
 		padding: 15px;
+		color: $p-text-color;
+
+		h1,
+		h2 {
+			color: $theme-title-text
+			font-family: "gotham_bookregular";
+		}
+
+		h3,
+		h4, {
+			color: $theme-title-text;
+			font-family: "gotham_lightregular";
+		}
+		
+		p {
+			color: $p-text-color;
+			font-family: "gotham_bookregular";
+		}
 	}
 
 	.row {
 		padding-top: 1em;
 		padding-bottom: 1em;
-		margin-left: 2em;
-		margin-right: 2em;
+	}
+
+	.theme-container {
+		margin-left: 25%;
+		margin-right: 25%;
+	}
+
+	.grid-left {
+		text-align: right;
+	}
+
+	.grid-right {
+		text-align: left;
+	}
+
+	.vertLine::before {
+	    content: "";
+	    background: $theme-tan;
+	    width: 1px;
+	    height: 200px;
+	    position: absolute;
+	    bottom: -60%;
+	    left: 50%;
+	}
+
+	.horizLine::after {
+		content: "";
+	    background: $theme-tan;
+	    width: 200px;
+	    height: 1px;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -100px;
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* End Styles for Header */
-
-
-
-
-
 
 .jumbotron-picture {
 	background-color: transparent;

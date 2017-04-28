@@ -98,78 +98,98 @@
 	</header>
 
 	<section id="content" style="background-color: transparent">
-		<h1 class="hide-accessible">${the_title}</h1>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h1>This is my Lapurd theme</h1>
-				<p>
-				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
-				</p>
+		<div class="theme-container">
+
+			<h1 class="hide-accessible">${the_title}</h1>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>This is my Lapurd theme</h1>
+					<p>
+					Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
+					</p>
+				</div>
 			</div>
+			<hr/>
+			<div class="row">
+				<div class="row">
+					<div class="clearfix vertLine"/>
+					<div class="col-md-6 grid-left">
+						<h3>Top left Title</h3>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam.
+						</p>
+					</div>
+					<div class="col-md-6 grid-right">
+						<h3>Top right Title</h3>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare.
+						</p>
+						
+					</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-md-6 grid-left">
+						<h3>Bottom left Title</h3>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus.
+						</p>
+					</div>
+					<div class="col-md-6 grid-right">
+						<h3>Bottom right Title</h3>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra.
+						</p>
+						
+					</div>
+				</div>
+			</div>
+			<div class="row" style="background-color: $theme-bg-dark">
+				<div class="row">
+					<div class="col-md-12">
+						<ul>
+							<li>[PICTURE]</li>
+							<li>[PICTURE]</li>
+							<li>[PICTURE]</li>
+							<li>[PICTURE]</li>
+							<li>[PICTURE]</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
 		</div>
+		
+		<div class="theme-container">
+			<hr/>
+			<div class="row">
+				<nav id="breadcrumbs">
+					<@liferay.breadcrumbs />
+				</nav>
+				<p> This should be after breadcrumbs and below this should be area for movable modules</p>
+			</div>
+			<div class="row">
+				<#if selectable>
+					<@liferay_util["include"] page=content_include />
+				<#else>
+					${portletDisplay.recycle()}
 
-		<div class="row">
-			<div class="col-md-6">
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
-				</p>
-				<p>
-				Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
-				</p>
-				<p>
-				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
-				</p>
+					${portletDisplay.setTitle(the_title)}
+
+					<@liferay_theme["wrap-portlet"] page="portlet.ftl">
+						<@liferay_util["include"] page=content_include />
+					</@>
+				</#if>
 			</div>
-			<div class="col-md-6">
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sapien auctor mi imperdiet faucibus quis eu risus. Nulla cursus ligula varius euismod pharetra. Aenean a vulputate enim, quis hendrerit metus. Sed ut sem non eros tincidunt congue viverra id diam. Aenean sed nibh nisi. Nulla vel ligula a ante vehicula ornare. Nunc a urna ac augue blandit ornare. In rhoncus, tellus a tincidunt consectetur, lectus elit hendrerit lorem, sed faucibus arcu justo sit amet lacus. Nunc a finibus leo. Cras sollicitudin elementum ex lobortis viverra. Donec congue, risus non laoreet fringilla, lacus nulla placerat nibh, nec lobortis ipsum ante in diam.
-				</p>
-				<p>
-				Curabitur ultrices nisi a facilisis sollicitudin. Pellentesque pharetra est quis neque vulputate tempor. Pellentesque pharetra, ante ac accumsan cursus, dui risus porta metus, eget interdum sem tortor in erat. Phasellus vel velit vitae justo varius imperdiet eu a nibh. Nullam non sagittis orci. In quis tellus lectus. Integer eget elit sem. Cras maximus arcu quis sem vulputate porta sed ut arcu. Morbi iaculis turpis a justo elementum egestas. Donec vestibulum dolor vel diam efficitur, eu malesuada lacus varius. Nunc maximus ultricies eros, et varius metus tincidunt et. Suspendisse efficitur sem id est facilisis, vitae dignissim metus sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec tempus nunc, varius ultricies quam.
-				</p>
-				<p>
-				Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
-				</p>
-			</div>
-			
+			<hr/>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<nav id="breadcrumbs">
-			<@liferay.breadcrumbs />
-		</nav>
-		<p> This should be after breadcrumbs and below this should be area for movable modules</p>
-
-		<#if selectable>
-			<@liferay_util["include"] page=content_include />
-		<#else>
-			${portletDisplay.recycle()}
-
-			${portletDisplay.setTitle(the_title)}
-
-			<@liferay_theme["wrap-portlet"] page="portlet.ftl">
-				<@liferay_util["include"] page=content_include />
-			</@>
-		</#if>
 	</section>
-	<p> end this is some text stuff </p>
 
 
 	<!--======================================================== footer ========================================================-->
+	<hr/>
 	<footer id="footer" role="contentinfo">
-		<p class="powered-by">
+		<p class="powered-by text-center">
 			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
 	</footer>
@@ -177,44 +197,11 @@
 </div>
 
 <@liferay_util["include"] page=body_bottom_include />
-<p> TEXT between page=body_bottom_include and page=bottom_include</p>
 <@liferay_util["include"] page=bottom_include />
 
 <!-- inject:js -->
 <!-- endinject -->
 
 </body>
-<!--
-</html>
-	<nav role="navigation" aria-labelledby="block-lapurd-main-menu-menu" id="block-lapurd-main-menu" class="block block-menu navigation menu--main">
-	<ul class="clearfix menu">
-		<li class="menu-item">
-			<a href="/drupal8/lapurd/">Home</a>
-		</li>
-		<li class="menu-item">
-			<a href="/drupal8/lapurd/about-us">About us</a>
-		</li>
-		<li class="menu-item menu-item--expanded">
-			<a href="/drupal8/lapurd/blog/large-image">Blog</a>
-			<ul class="menu">
-				<li class="menu-item">
-					<a href="/drupal8/lapurd/blog/grid-full-width">Grid Full Width</a>
-				</li>
-				<li class="menu-item">
-					<a href="/drupal8/lapurd/blog/grid-with-sidebar">Grid with sidebar</a>
-				</li>
-			</ul>
 
-		</li>
-		<li class="menu-item">
-			<a href="/drupal8/lapurd/portfolio">Portfolio</a>
-		</li>
-		<li class="menu-item">
-			<a href="/drupal8/lapurd/faqs">FAQS</a>
-		</li>
-		<li class="menu-item">
-			<a href="/drupal8/lapurd/contact">Contact</a>
-		</li>
-	</ul>
-</nav>
--->
+</html>
