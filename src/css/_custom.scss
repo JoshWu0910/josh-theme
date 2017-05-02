@@ -7,7 +7,8 @@
 
 /* Common Site Variables */
 $theme-tan: #DAB485;
-$theme-bg-blue: rgba(19,30,38,0.85);
+$theme-tan-light: #ecd8c0;
+$theme-bg-dark-transparent: rgba(19,30,38,0.85);
 $theme-bg-dark: #131e26;
 $theme-bg-light-1: #eaeaea;
 $theme-bg-light-2: #f6f6f6;
@@ -41,39 +42,33 @@ html {
 
 body {
 	margin: 0;
+	line-height: 1.4;
+	font-size: 15px;
+	font-family: "gotham_bookregular";
 }
 
-header, 
-footer, 
-main, 
-menu, 
-nav, 
-section, 
+
 .block {
 	display: block;
-}
-
-a {
-	background-color: transparent;
 }
 
 a:active,
 a:hover {
 	outline: 0;
 	text-decoration: none;
-}
-
-div, 
-nav, 
-ul {
+	transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
 }
 
 p {
 	position: relative;
 }
 
-li {
-	list-style: none; /*background-color: yellow; /*debug*/ 
+li, ul {
+	list-style: none; 
+	display: block;/*background-color: yellow; /*debug*/ 
 }
 
 .text-center {
@@ -83,9 +78,14 @@ li {
 #wrapper {
 	top: 0;
 	margin: 0;
-	margin-top: -28px;
+	margin-top: -30px;
 }
 
+section {
+	width: 100%;
+	left: 0;
+	right: 0;
+}
 /* End Entire Page Styles */
 
 
@@ -101,7 +101,7 @@ li {
 	height: 90px;
 	left: 0;
 	right: 0;
-	background-color: $theme-bg-blue; /* Will be transparent and not transparent upon scroll later */
+	background-color: $theme-bg-dark-transparent; /* Will be transparent and not transparent upon scroll later */
 	
 	a {
 		color: #fff;
@@ -118,7 +118,7 @@ li {
 
 #header .site-name a {
 	color: #fff;
-	font-size: 1.333em;
+	font-size: 1.33em;
 	text-transform: uppercase;
 }
 
@@ -128,8 +128,66 @@ li {
 	width: auto;
 }
 
+#header ul.menu {
+	position: relative;
+	display: block;
+	float: right;
+}
+
+a.link-button {
+	background-color: $theme-tan;
+	border-radius: 30px;
+	padding: 15px 35px 15px 35px;
+	color: #313432 !important;
+	font-family: "gotham_boldregular";
+}
+
+a.link-button:hover {
+	background-color: $theme-tan-light;
+	transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+#highlights {
+	color: #fff;
+
+	h1 {
+		color: $theme-tan;
+		text-transform: uppercase;
+	}
+
+	.gallery {
+		margin: 10px;
+
+		img {
+			width: 200px;
+			height: 150px;
+		}
+	}
+}
 
 @media (min-width: 992px) {
+	li li {
+		display: inline;
+		position: relative;
+	}
+
+	ul ul {
+		position: absolute;
+		display: none;
+	}
+
+	li:hover ul {
+		display: inline-block;
+	}
+
+	ul ul ul {
+		left: 100%;
+		top: 0;
+	}
+
 	#header #nav-menu-top {
 		display:inline-block;
 		padding-top: 10px;
@@ -186,11 +244,11 @@ li {
 	}
 	
 
-	#nav-menu-top > ul.menu li.menu-item--expanded ul { 
+	#nav-menu-top ul.menu li.menu-item--expanded ul { 
 		display: none;
 	}
 
-	#nav-menu-top > ul.menu li.menu-item--expanded:hover ul {
+	#nav-menu-top ul.menu li.menu-item--expanded:hover > ul {
 		display: block;
 		background-color: $theme-bg-dropdown;
 		float: left;
@@ -206,6 +264,10 @@ li {
 		}
 	}
 
+	#nav-menu-top ul.menu ul.menu {
+		display: none;
+	}
+
 	#login {
 		padding-top: 10px;
 		margin-left: 15px;
@@ -214,14 +276,16 @@ li {
 	#login .menu-item-child {
 		display: inline-block;
 	}
+		/* End Styles for Header */
 
-	#content {
+		/* Start Styles for Content */
+	#content { /* note---- this might need to be in global scope and not within media breakpoint */
 		padding: 15px;
 		color: $p-text-color;
 
 		h1,
 		h2 {
-			color: $theme-title-text
+			color: $theme-title-text;
 			font-family: "gotham_bookregular";
 		}
 
@@ -255,7 +319,15 @@ li {
 		text-align: left;
 	}
 
-	.vertLine::before {
+	.bg-dark {
+		background-color: $theme-bg-dark;
+	}
+
+	.gallery ul li {
+		display: inline-block;
+	}
+
+	div.row1::before {
 	    content: "";
 	    background: $theme-tan;
 	    width: 1px;
@@ -265,7 +337,7 @@ li {
 	    left: 50%;
 	}
 
-	.horizLine::after {
+	div.row2::after {
 		content: "";
 	    background: $theme-tan;
 	    width: 200px;
@@ -277,16 +349,16 @@ li {
 	}
 }
 
-/* End Styles for Header */
 
 .jumbotron-picture {
 	background-color: transparent;
-	background-image: url("images/mountains2.jpg");
+	background-image: url("../images/mountains2.jpg");
 	background-repeat: no-repeat;
 	background-position: 0px -600px;
-	background-size: cover;
+	background-size: auto;
+	background-position-x: center;;
 	top: 0;
-	height: 700px;
+	height: 100%;
 	margin-left: -28px;
 	margin-right: -28px;
 }
@@ -295,6 +367,6 @@ li {
 	height: 700px;
 	z-index: 0;
 	width: 100%;
-	background-color: $theme-bg-blue; /* overlay over image */
+	background-color: $theme-bg-dark-transparent; /* overlay over image */
 }
 
