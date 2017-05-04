@@ -52,8 +52,11 @@ body {
 	display: block;
 }
 
-a:active,
-a:hover {
+.text-caps {
+	text-transform: uppercase;
+}
+
+a:active, a:hover {
 	outline: 0;
 	text-decoration: none;
 	transition: all 0.3s ease-out;
@@ -71,6 +74,15 @@ li, ul {
 	display: block;/*background-color: yellow; /*debug*/ 
 }
 
+.bg-dark {
+		background-color: $theme-bg-dark;
+		margin: 0;
+	}
+
+.control-menu {
+	height: 64px;
+}
+
 .text-center {
 	align-text: center;
 }
@@ -79,6 +91,7 @@ li, ul {
 	top: 0;
 	margin: 0;
 	margin-top: -30px;
+	padding: 0;
 }
 
 section {
@@ -92,31 +105,96 @@ section {
 
 /* Styles for Header */
 
-#header {
-	font-family:"gotham_boldregular"; /* need to add fonts to 
-	html */
+#banner {
+	font-family:"gotham_boldregular";
 	z-index: 99;
-	padding-top: 25px;
 	position: fixed;
-	height: 90px;
+	height: 100px;
 	left: 0;
 	right: 0;
 	background-color: $theme-bg-dark-transparent; /* Will be transparent and not transparent upon scroll later */
 	
 	a {
 		color: #fff;
+		text-transform: uppercase;
+		font-size: 0.8em;
+		text-align: center;
 	}
 
 	a:hover {
 		color: $theme-tan;
 	}
+
+	.site-name {
+		font-size: 1.2em;
+	}
+
+	#jw-banner {
+		height: 50px;
+		margin-top: 50px;
+		padding-top: 10px;
+	}
+
+	#navigation > ul {
+		float: right;
+	}
+
+	#navigation > ul > li {
+		display: inline-block;
+		position: relative;
+		padding-right: 15px;
+		
+		float: left;
+
+		ul {
+			display: none;
+		}
+		.child-menu {
+		    position: absolute;
+		    top: 20px;
+		    left: 0;
+		    background: $theme-bg-dropdown;
+		    padding: 0 15px 10px 15px;
+		    margin-left: 0;
+		    width: 220px;
+		    z-index: 200;
+		}
+	}
+
+	#navigation ul li:hover .child-menu {
+		display: block;
+		background-color: $theme-bg-dropdown;
+	}
+
+	#navigation ul li:hover > a:before {
+		width: 100%;
+	}
+
+	#navigation > ul > li > a:before {
+		background-color: $theme-tan;
+		bottom: 0;
+		content: "";
+		height: 4px;
+		left: 50%;
+		margin: 0 auto;
+		position: absolute;
+		top: auto;
+		transform: translate(-50%,-47px);
+		transition: width 0.3s ease 0s;
+		width: 0;
+	}
+}
+
+.theme-container {
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 #company-branding {
 	display: inline-block;
 }
 
-#header .site-name a {
+#header .site-name a { 
 	color: #fff;
 	font-size: 1.33em;
 	text-transform: uppercase;
@@ -134,11 +212,33 @@ section {
 	float: right;
 }
 
+.mobile-menu {
+	color: red;
+	background-color: blue;
+	top: 0;
+	bottom: 0;
+	width: 280px;
+}
+
+a.link-fade {
+	color: $theme-tan;
+
+}
+
+a.link-fade:hover {
+	color: $theme-tan-light;
+	transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
 a.link-button {
 	background-color: $theme-tan;
 	border-radius: 30px;
-	padding: 15px 35px 15px 35px;
 	color: #313432 !important;
+	padding: 15px 35px 15px 35px;
 	font-family: "gotham_boldregular";
 }
 
@@ -152,23 +252,55 @@ a.link-button:hover {
 
 #highlights {
 	color: #fff;
+	display: block;
 
 	h1 {
 		color: $theme-tan;
 		text-transform: uppercase;
 	}
 
+	.content-desc {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
 	.gallery {
-		margin: 10px;
+		margin: auto;
+		padding-top: 2em;
+
+		ul {
+			padding: 0;
+			margin: auto;
+		}
+		
+		li {
+			display: inline-block;
+			padding: 1em 15px;
+		}
 
 		img {
+			max-width: 200px;
+			height: auto;
+			border-radius: 10px;
+		}
+
+		a {
+			color: #fff;
+			font-family: "gotham_boldregular";
+			font-size: 1em;
+			text-transform: uppercase;
+			position: absolute;
 			width: 200px;
-			height: 150px;
+			height: auto;
+		    margin-top: 5%;
+			text-align: center;
 		}
 	}
 }
 
-@media (min-width: 992px) {
+
+
+/* Old 992px media query
+
 	li li {
 		display: inline;
 		position: relative;
@@ -194,7 +326,7 @@ a.link-button:hover {
 		width: auto;
 	}
 
-	#header div.region-header > .header-nav {
+	#header div.region-header > .jw-nav-bar {
 		display:inline-block;
 		width: auto;
 		float: right;
@@ -255,6 +387,7 @@ a.link-button:hover {
 		padding: 0;
 		padding: 0 15px 10px 15px;
 		width: 150px;
+		position: absolute; /*debug 
 
 		li {
 			padding-top: 0.8em;
@@ -276,10 +409,10 @@ a.link-button:hover {
 	#login .menu-item-child {
 		display: inline-block;
 	}
-		/* End Styles for Header */
+		/* End Styles for Header 
 
-		/* Start Styles for Content */
-	#content { /* note---- this might need to be in global scope and not within media breakpoint */
+		/* Start Styles for Content 
+	#content { /* note---- this might need to be in global scope and not within media breakpoint 
 		padding: 15px;
 		color: $p-text-color;
 
@@ -306,10 +439,7 @@ a.link-button:hover {
 		padding-bottom: 1em;
 	}
 
-	.theme-container {
-		margin-left: 25%;
-		margin-right: 25%;
-	}
+
 
 	.grid-left {
 		text-align: right;
@@ -317,14 +447,6 @@ a.link-button:hover {
 
 	.grid-right {
 		text-align: left;
-	}
-
-	.bg-dark {
-		background-color: $theme-bg-dark;
-	}
-
-	.gallery ul li {
-		display: inline-block;
 	}
 
 	div.row1::before {
@@ -347,20 +469,22 @@ a.link-button:hover {
 	    left: 50%;
 	    margin-left: -100px;
 	}
-}
 
+	.gallery {
+		display: inline-flex;
+	}
+
+*/
 
 .jumbotron-picture {
 	background-color: transparent;
 	background-image: url("../images/mountains2.jpg");
 	background-repeat: no-repeat;
-	background-position: 0px -600px;
-	background-size: auto;
+	background-size: cover;
 	background-position-x: center;;
 	top: 0;
-	height: 100%;
-	margin-left: -28px;
-	margin-right: -28px;
+	height: auto;
+	width: 100%;
 }
 
 .background-box { /* This creates space for the jumbotron picture to be displayed */
