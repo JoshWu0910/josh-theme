@@ -6,16 +6,20 @@
 
 <head>
 	<title>${the_title} - ${company_name}</title>
-
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	<#if is_signed_in>
 		<style>
-		#wrapper {
-			padding-top:0 !important;
-		}
+			#jw-banner {
+				margin-top: 20px !important;
+			}
 		</style>
 	</#if>
+
+	<script type="text/javascript">
+	</script>
+
 
 
 	<@liferay_util["include"] page=top_head_include />
@@ -30,74 +34,41 @@
 <@liferay.control_menu />
 
 <div class="container-fluid" id="wrapper">
-
 	<header id="banner" role="banner">
-		<div id="header">
-			
-			<div class="container">
+		<div class="row" id="jw-banner">
+			<div class="theme-container">
 
+				<div id="company-branding" class="jw-nav-bar jw-nav-left col-xs-2 col-sm-3 col-md-3">
+					<div class="site-name">
+						<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
+					</div>	
+				</div>
+				
+				<div class="jw-nav-bar jw-nav-right col-xs-10 col-sm-9 col-md-9">
+					<nav id="login" class="row float-right">
 
-				<div class="region region-header">
-
-					<div id="company-branding" class="block">
-						<div class="site-name">
-							<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
-						</div>	
-					</div>
-					
-					<div class="container header-nav">
-						<nav id="login" class="block-menu">
-							<div class="menu-item-child">
+						<!-- Dynamic navigation menu -->
+						<div class="col-xs-9">
+							<#if has_navigation && is_setup_complete>
+								<#include "${full_templates_path}/navigation.ftl" />
+							</#if>
+						</div>
+						<!-- /Dynamic navigation menu -->
+						<div class="col-xs-3">
+							<div>
 								<#if !is_signed_in>
 									<a class="link-button" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
 								</#if>
 							</div>
-							<div class="menu-item-child">
-								<#if has_navigation && is_setup_complete>
-									<#include "${full_templates_path}/navigation.ftl" />
-								</#if>
-							</div>
-						</nav>
-
-						<nav id="nav-menu-top" class="block-menu">
-							<ul class="menu">
-								<li class="menu-item--active-trail">
-									<a href="">Home</a>
-								</li>
-								<li class="menu-item menu-item--expanded"> <!--"expanded" tag becuase this menu item has a dropdown menu-->
-									<a href="">Menu Item2</a>
-									<ul class="menu">
-										<li class="menu-item">
-											<a href="">dropdown1</a>
-										</li>
-										<li class="menu-item menu-item--expanded"> <!--"expanded" tag becuase this menu item has a dropdown menu-->
-											<a href="">dropdown2</a>
-											<ul class="menu">
-												<li class="menu-item">
-													<a href="">sub-level-dropdown1</a>
-												</li>
-												<li class="menu-item">
-													<a href="">sub-level-dropdown2</a>
-												</li>
-											</ul>
-										</li>
-										<li class="menu-item">
-											<a href="">dropdown3</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu-item">
-									<a href="">Menu Item3</a>
-								</li>
-								<li class="menu-item">
-									<a href="">Menu Item4</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
+						</div>
+						
+					</nav>
 				</div>
 			</div>
+			
 		</div>
+
+		
 
 		<div class="jumbotron-picture">
 			<div class="background-box"/>
@@ -157,17 +128,33 @@
 		<div class="row clearfix ">
 			<div class="theme-container">
 				<div class="row">
-					<h1>asdfasdf</h1>
-					<h2>Stuff stuff stuff stuff</h2>
-					<div class="col-md-12 gallery">
-						<ul>
-							<li><a href="" alt="Gallery picture"><img src="images/gallery1.jpg">1</a></li>
-							<li><a href="" alt="Gallery picture"><img src="images/gallery2.jpg">2</a></li>
-							<li><a href="" alt="Gallery picture"><img src="images/gallery3.jpg">3</a></li>
-							<li><a href="" alt="Gallery picture"><img src="images/gallery4.jpg">4</a></li>
-						</ul>					
+					<div class="content-desc">
+						<a class="link-fade text-caps">This is a Title, some awesome title.</a>
+						<p>This is some pretty cool sub text. should be in white.</p>
+						<a class="link-button" href="">This is a link</a>
 					</div>
-					<a class="link-button" href="">This is a link</a>
+					<div class="row">
+						<div class="gallery">
+							<ul>
+								<li>
+									<a href="" alt="Gallery picture">Zion National Park</a>
+									<img id="gall-img-1" class="gall-image" src="o/josh-theme/images/gallery1.jpg" alt="Zion National Park"/>
+								</li>
+								<li>
+									<a href="" alt="Gallery picture">Badminton</a>
+									<img id="gall-img-2" class="gall-image" src="o/josh-theme/images/gallery2.jpg" alt="Badminton"/>
+								</li>
+								<li>
+									<a href="" alt="Gallery picture">Snowboarding</a>
+									<img id="gall-img-3" class="gall-image" src="o/josh-theme/images/gallery3.jpg" alt="Snowboarding"/>
+								</li>
+								<li>
+									<a href="" alt="Gallery picture">Rock Climbing</a>
+									<img id="gall-img-4" class="gall-image" src="o/josh-theme/images/gallery4.jpg" alt="Rock Climbing"/>
+								</li>
+							</ul>					
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>		
@@ -175,7 +162,7 @@
 
 
 
-
+	<section class="container-fluid">
 		<div class="row">
 			<nav id="breadcrumbs">
 				<@liferay.breadcrumbs />
