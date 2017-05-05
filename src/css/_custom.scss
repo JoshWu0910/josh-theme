@@ -52,6 +52,16 @@ body {
 	display: block;
 }
 
+.float-right {
+	float: right;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	width: 100% !important;
+}
+
 .text-caps {
 	text-transform: uppercase;
 }
@@ -98,6 +108,7 @@ section {
 	width: 100%;
 	left: 0;
 	right: 0;
+	position: static;
 }
 /* End Entire Page Styles */
 
@@ -109,11 +120,12 @@ section {
 	font-family:"gotham_boldregular";
 	z-index: 99;
 	position: fixed;
-	height: 100px;
+	height: 110px;
 	left: 0;
 	right: 0;
 	background-color: $theme-bg-dark-transparent; /* Will be transparent and not transparent upon scroll later */
-	
+
+
 	a {
 		color: #fff;
 		text-transform: uppercase;
@@ -126,13 +138,14 @@ section {
 	}
 
 	.site-name {
-		font-size: 1.2em;
+		font-size: 1.5em;
 	}
 
 	#jw-banner {
-		height: 50px;
-		margin-top: 50px;
-		padding-top: 10px;
+		margin: 0 auto;
+		max-width: 992px;
+		padding: 0;
+		padding-top: 60px;
 	}
 
 	#navigation > ul {
@@ -142,13 +155,13 @@ section {
 	#navigation > ul > li {
 		display: inline-block;
 		position: relative;
-		padding-right: 15px;
-		
+		margin: 0 10px;
 		float: left;
 
 		ul {
 			display: none;
 		}
+
 		.child-menu {
 		    position: absolute;
 		    top: 20px;
@@ -158,6 +171,10 @@ section {
 		    margin-left: 0;
 		    width: 220px;
 		    z-index: 200;
+
+		    li {
+		    	padding-top: 10px;
+		    }
 		}
 	}
 
@@ -183,11 +200,15 @@ section {
 		transition: width 0.3s ease 0s;
 		width: 0;
 	}
+
+	#sign-in div {
+		display: inherit;
+		white-space: nowrap;
+	}
 }
 
 .theme-container {
-	margin-left: 20%;
-	margin-right: 20%;
+	margin: 0 5%;
 }
 
 #company-branding {
@@ -212,20 +233,12 @@ section {
 	float: right;
 }
 
-.mobile-menu {
-	color: red;
-	background-color: blue;
-	top: 0;
-	bottom: 0;
-	width: 280px;
-}
-
-a.link-fade {
+.link-fade {
 	color: $theme-tan;
 
 }
 
-a.link-fade:hover {
+.link-fade:hover {
 	color: $theme-tan-light;
 	transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -234,15 +247,15 @@ a.link-fade:hover {
     cursor: pointer;
 }
 
-a.link-button {
+.link-button {
 	background-color: $theme-tan;
 	border-radius: 30px;
 	color: #313432 !important;
-	padding: 15px 35px 15px 35px;
+	padding: 7px 15px;
 	font-family: "gotham_boldregular";
 }
 
-a.link-button:hover {
+.link-button:hover {
 	background-color: $theme-tan-light;
 	transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -250,26 +263,47 @@ a.link-button:hover {
     -webkit-transition: all 0.3s ease-out;
 }
 
+.jumbotron-picture {
+	background-color: transparent;
+	background-image: url("../images/mountains2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;;
+	top: 0;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
+
+.background-box { /* This creates space for the jumbotron picture to be displayed */
+	height: 700px;
+	z-index: 0;
+	width: 100%;
+	background-color: $theme-bg-dark-transparent; /* overlay over image */
+}
+
+#content {
+	top: 100px;
+    position: static;
+}
+
 #highlights {
 	color: #fff;
 	display: block;
 
-	h1 {
-		color: $theme-tan;
-		text-transform: uppercase;
-	}
-
 	.content-desc {
 		padding-top: 2em;
 		padding-bottom: 2em;
+		line-height: 2em;
 	}
+
 	.gallery {
 		margin: auto;
 		padding-top: 2em;
 
 		ul {
 			padding: 0;
-			margin: auto;
+			margin: 0 auto;
 		}
 		
 		li {
@@ -296,6 +330,80 @@ a.link-button:hover {
 		}
 	}
 }
+
+@media screen and (min-width: 400px) {
+	.link-button {
+		padding: 8px 20px;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.link-button {
+		padding: 10px 25px;
+	}
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+	#jw-nav-bar {
+		background: #fff;
+	    bottom: 0;
+	    display: block !important;
+	    height: 100%;
+	    overflow-y: auto !important;
+	    position: fixed;
+	    right: -250px;
+	    top: 0;
+	    width: 250px;
+	    z-index: 1000;
+	    transition: all 0.5s ease-in-out;
+	    -webkit-transition: all 0.5s ease-in-out;
+	    -moz-transition: all 0.5s ease-in-out;
+	    -o-transition: all 0.5s ease-in-out;
+	    padding: 20px;
+	}
+	
+	.jw-nav-bar-toggle {
+		background-color: transparent;
+		border: none;
+		display: block;
+		padding: 0;
+		margin: 0 15px;
+		border-radius: 0;
+	}
+
+	.toggle-icon-bar {
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: 1px;
+	background: $theme-tan;
+	margin: 5px auto;
+}
+}
+
+@media screen and (min-width: 992px) {
+
+	.theme-container {
+		margin: 0 18%;
+	}
+	
+	.link-button {
+		padding: 15px 35px;
+	}
+
+	.jw-nav-bar-toggle {
+		display: none;
+	}
+
+}
+/*	selector + sibling {
+		style top or left side
+	}
+
+*/
 
 
 
@@ -476,21 +584,5 @@ a.link-button:hover {
 
 */
 
-.jumbotron-picture {
-	background-color: transparent;
-	background-image: url("../images/mountains2.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position-x: center;;
-	top: 0;
-	height: auto;
-	width: 100%;
-}
 
-.background-box { /* This creates space for the jumbotron picture to be displayed */
-	height: 700px;
-	z-index: 0;
-	width: 100%;
-	background-color: $theme-bg-dark-transparent; /* overlay over image */
-}
 
