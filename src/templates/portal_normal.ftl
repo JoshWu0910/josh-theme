@@ -6,21 +6,22 @@
 
 <head>
 	<title>${the_title} - ${company_name}</title>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	<#if is_signed_in>
 		<style>
 			#jw-banner {
-				margin-top: 20px !important;
+				margin-top: -30px !important;
+			}
+			#banner {
+				height: 80px !important;
+			}
+			#jw-nav-bar {
+				float: right;
 			}
 		</style>
 	</#if>
-
-	<script type="text/javascript">
-	</script>
-
-
 
 	<@liferay_util["include"] page=top_head_include />
 </head>
@@ -36,49 +37,50 @@
 <div class="container-fluid" id="wrapper">
 	<header id="banner" role="banner">
 		<div class="row" id="jw-banner">
-			<div class="theme-container">
-
-				<div id="company-branding" class="jw-nav-bar jw-nav-left col-xs-2 col-sm-3 col-md-3">
-					<div class="site-name">
-						<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
-					</div>	
-				</div>
-				
-				<div class="jw-nav-bar jw-nav-right col-xs-10 col-sm-9 col-md-9">
-					<nav id="login" class="row float-right">
-
-						<!-- Dynamic navigation menu -->
-						<div class="col-xs-9">
-							<#if has_navigation && is_setup_complete>
-								<#include "${full_templates_path}/navigation.ftl" />
-							</#if>
-						</div>
-						<!-- /Dynamic navigation menu -->
-						<div class="col-xs-3">
-							<div>
-								<#if !is_signed_in>
-									<a class="link-button" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-								</#if>
-							</div>
-						</div>
-						
-					</nav>
-				</div>
+			<div id="company-branding" class="jw-nav-bar jw-nav-left col-xs-2 col-sm-2 col-md-2">
+				<div class="site-name">
+					<a href="localhost:8080/" title="Home" rel="home">${site_name}</a>
+				</div>	
 			</div>
 			
-		</div>
+			<!--<div class="jw-nav-bar jw-nav-right float-right col-xs-10 col-sm-8 col-md-8">-->
+				<nav id="login">
+					<div class="float-right">
+						<#if !is_signed_in>
+							<a class="link-button" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow"><div>${sign_in_text}</div></a>
+						</#if>	
+						<button class="jw-nav-bar-toggle float-right">
+							<span class="toggle-icon-bar"></span>
+							<span class="toggle-icon-bar"></span>
+							<span class="toggle-icon-bar"></span>						
+						</button>
+					</div>
+						
+					<!-- Dynamic navigation menu -->
+					<div class="float-right" id="jw-nav-bar">
+						<#if has_navigation && is_setup_complete>
+							<#include "${full_templates_path}/navigation.ftl" />
+						</#if>
 
-		
-
-		<div class="jumbotron-picture">
-			<div class="background-box"/>
+					</div>
+					<!-- /Dynamic navigation menu -->
+					
+				</nav>
+			<!--</div>-->
 		</div>
 	</header>
 
-	<section id="content" style="background-color: transparent">
-		<div class="theme-container clearfix">
+	<section id="hero">
+		<div class="row">
+			<div class="jumbotron-picture">
+				<div class="background-box"/>
+			</div>
+		</div>
+	</section>
 
-			<!--<h1 class="hide-accessible">${the_title}</h1>-->
+	<section id="content">
+		<div class="theme-container">
+			<h1 class="hide-accessible">${the_title}</h1>
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h1>This is my <span style="color: #DAB485">Lapurd</span> theme</h1>
@@ -89,8 +91,8 @@
 			</div>
 			<hr/>
 			<div>
-				<div class="row clearfix">
-					<div class="row clearfix">
+				<div class="row">
+					<div class="row">
 						<div class="col-md-6 grid-left">
 							<h3>Top left Title</h3>
 							<p>
@@ -105,7 +107,7 @@
 						</div>	
 					</div>
 
-					<div class="row clearfix row2">
+					<div class="row row2">
 						<div class="col-md-6 grid-left">
 							<h3>Bottom left Title</h3>
 							<p>
@@ -124,8 +126,8 @@
 		</div>	
 	</section>
 	
-	<section class="container-fluid bg-dark" id="highlights">
-		<div class="row clearfix ">
+	<section class="bg-dark" id="highlights">
+		<div class="row">
 			<div class="theme-container">
 				<div class="row">
 					<div class="content-desc">
@@ -138,19 +140,19 @@
 							<ul>
 								<li>
 									<a href="" alt="Gallery picture">Zion National Park</a>
-									<img id="gall-img-1" class="gall-image" src="o/josh-theme/images/gallery1.jpg" alt="Zion National Park"/>
+									<img id="gall-img-1" class="gall-image" src="../images/gallery1.jpg" alt="Zion National Park"/>
 								</li>
 								<li>
 									<a href="" alt="Gallery picture">Badminton</a>
-									<img id="gall-img-2" class="gall-image" src="o/josh-theme/images/gallery2.jpg" alt="Badminton"/>
+									<img id="gall-img-2" class="gall-image" src="../images/gallery2.jpg" alt="Badminton"/>
 								</li>
 								<li>
 									<a href="" alt="Gallery picture">Snowboarding</a>
-									<img id="gall-img-3" class="gall-image" src="o/josh-theme/images/gallery3.jpg" alt="Snowboarding"/>
+									<img id="gall-img-3" class="gall-image" src="../images/gallery3.jpg" alt="Snowboarding"/>
 								</li>
 								<li>
 									<a href="" alt="Gallery picture">Rock Climbing</a>
-									<img id="gall-img-4" class="gall-image" src="o/josh-theme/images/gallery4.jpg" alt="Rock Climbing"/>
+									<img id="gall-img-4" class="gall-image" src="../images/gallery4.jpg" alt="Rock Climbing"/>
 								</li>
 							</ul>					
 						</div>
@@ -162,14 +164,12 @@
 
 
 
-	<section class="container-fluid">
-		<div class="row">
+	<section id="portletSect">
 			<nav id="breadcrumbs">
 				<@liferay.breadcrumbs />
 			</nav>
 			<p> This should be after breadcrumbs and below this should be area for movable modules</p>
-		</div>y
-		<div class="row">
+
 			<#if selectable>
 				<@liferay_util["include"] page=content_include />
 			<#else>
@@ -181,7 +181,7 @@
 					<@liferay_util["include"] page=content_include />
 				</@>
 			</#if>
-		</div>
+		
 	</section>
 
 
@@ -200,7 +200,10 @@
 
 <!-- inject:js -->
 <!-- endinject -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
+	<script type="text/javascript">
+	</script>
 </body>
 
 </html>
