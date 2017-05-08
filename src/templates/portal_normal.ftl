@@ -21,6 +21,11 @@
 
 			#jw-nav-bar {
 				float: right;
+				top: 65px !important;
+			}
+
+			.jumbotron-picture {
+				top: -25px !important;
 			}
 		</style>
 	</#if>
@@ -60,7 +65,7 @@
 					<div class="float-right" id="jw-nav-bar">
 
 						<#if has_navigation && is_setup_complete>
-							<a class="jw-nav-bar-toggle-close" href="jw-nav-bar">
+							<a class="jw-nav-bar-toggle-close" href=".">
 								<span class="jw-nav-bar-toggle-close">&#x2261;</span>
 							</a>
 							<#include "${full_templates_path}/navigation.ftl" />
