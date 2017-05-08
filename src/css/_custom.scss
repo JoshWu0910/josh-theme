@@ -20,18 +20,18 @@ $theme-title-text: #000;
 /* Entire Page Styles */
 
 @font-face {
-	font-family: 'gotham_boldregular';
-	src: url(fonts/Gotham Bold Regular.ttf) format(truetype);
+	font-family: "gotham_boldregular";
+	src: url(fonts/GothamBoldRegular.ttf) format("truetype");
 }
 
 @font-face {
-	font-family: 'gotham_lightregular';
-	src: url(fonts/Gotham Light Regular.otf) format(truetype);
+	font-family: "gotham_lightregular";
+	src: url(fonts/GothamLightRegular.otf) format("truetype");
 }
 
 @font-face {
-	font-family: 'gotham_bookregular';
-	src: url(fonts/Gotham Book Regular.otf) format(truetype);
+	font-family: "gotham_bookregular";
+	src: url(fonts/GothamBookRegular.otf) format("truetype");
 }
 
 html {
@@ -407,7 +407,7 @@ section {
 		top: 0;
 		transition: all 0.5s ease-in-out;
 		width: 250px;
-		z-index: 1000;
+		z-index: 200;
 
 		ul {
 			margin: 0;
@@ -496,8 +496,25 @@ section {
 		width: 0;
 	}
 
-	#navigation ul li:hover ul {
+	#banner #navigation > ul > li:hover > ul {
 		display: block;
+		width: auto;
+	}
+
+	#banner #navigation > ul ul > li:hover > ul {
+		display: block;
+		margin-left: 100%;
+		top: 0;
+		width: auto;
+		z-index: 200;
+	}
+
+	#banner #navigation > ul > li .child-menu li {
+		white-space: nowrap;
+	}
+
+	#banner #navigation > ul > li > ul .child-menu {
+		margin-left: 50%;
 	}
 
 	#navigation ul li.selected a:before {
