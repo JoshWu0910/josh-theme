@@ -6,47 +6,49 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 /* Common Site Variables */
-$theme-tan: #DAB485;
-$theme-tan-light: #ecd8c0;
-$theme-bg-dark-transparent: rgba(19,30,38,0.85);
-$theme-bg-dark: #131e26;
-$theme-bg-light-1: #eaeaea;
-$theme-bg-light-2: #f6f6f6;
-$theme-bg-dropdown: #313a41;
-$p-text-color: #777777;
+
+$p-text-color: #777;
+$theme-base: #DAB485;
+$theme-base-light: #ECD8C0;
+$theme-bg-dark: #131E26;
+$theme-bg-dark-transparent: rgba(19, 30, 38, 0.75);
+$theme-bg-dropdown: #313A41;
+$theme-bg-light-1: #EAEAEA;
+$theme-bg-light-2: #F6F6F6;
 $theme-title-text: #000;
 
 /* Entire Page Styles */
+
 @font-face {
 	font-family: 'gotham_boldregular';
-	src: url('fonts/Gotham Bold Regular.ttf') format('truetype');
+	src: url(fonts/Gotham Bold Regular.ttf) format(truetype);
 }
+
 @font-face {
 	font-family: 'gotham_lightregular';
-	src: url('fonts/Gotham Light Regular.otf') format('truetype');
+	src: url(fonts/Gotham Light Regular.otf) format(truetype);
 }
 
 @font-face {
 	font-family: 'gotham_bookregular';
-	src: url('fonts/Gotham Book Regular.otf') format('truetype');
-}	
+	src: url(fonts/Gotham Book Regular.otf) format(truetype);
+}
 
 html {
-	font-family: "gotham_lightregular", sans-serif;	
+	font-family: "gotham_lightregular", sans-serif;
 }
 
 ::selection {
-	background: $theme-tan;
-	color: #fff;
+	background: $theme-base;
+	color: #FFF;
 }
 
 body {
-	margin: 0;
-	line-height: 1.4;
-	font-size: 15px;
 	font-family: "gotham_bookregular";
+	font-size: 15px;
+	line-height: 1.4;
+	margin: 0;
 }
-
 
 .block {
 	display: block;
@@ -57,8 +59,7 @@ body {
 }
 
 .row {
-	margin-left: 0;
-	margin-right: 0;
+	margin: 1em 0;
 	width: 100% !important;
 }
 
@@ -67,12 +68,12 @@ body {
 }
 
 a:active, a:hover {
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
 	outline: 0;
 	text-decoration: none;
 	transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
 }
 
 p {
@@ -80,8 +81,8 @@ p {
 }
 
 li, ul {
-	list-style: none; 
-	display: block;/*background-color: yellow; /*debug*/ 
+	display: block;
+	list-style: none;
 }
 
 .bg-dark {
@@ -98,43 +99,49 @@ li, ul {
 }
 
 #wrapper {
-	top: 0;
 	margin: 0;
 	margin-top: -30px;
 	padding: 0;
+	top: 0;
+}
+
+p {
+	color: $p-text-color;
+}
+
+.portlet-title-text {
+	display: hidden;
 }
 
 section {
-	width: 100%;
 	left: 0;
-	right: 0;
 	position: static;
+	right: 0;
+	width: 100%;
 }
+
 /* End Entire Page Styles */
-
-
 
 /* Styles for Header */
 
 #banner {
-	font-family:"gotham_boldregular";
-	z-index: 99;
-	position: fixed;
+	background-color: $theme-bg-dark-transparent; /* Will be transparent and not transparent upon scroll later */
+	font-family: "gotham_boldregular";
 	height: 110px;
 	left: 0;
+	position: fixed;
 	right: 0;
-	background-color: $theme-bg-dark-transparent; /* Will be transparent and not transparent upon scroll later */
-
+	z-index: 99;
 
 	a {
-		color: #fff;
-		text-transform: uppercase;
+		color: #FFF;
 		font-size: 0.8em;
 		text-align: center;
+		text-transform: uppercase;
 	}
 
 	a:hover {
-		color: $theme-tan;
+		color: $theme-base;
 	}
 
 	.site-name {
@@ -154,51 +161,28 @@ section {
 
 	#navigation > ul > li {
 		display: inline-block;
-		position: relative;
-		margin: 0 10px;
 		float: left;
+		margin: 0 10px;
+		position: relative;
 
 		ul {
 			display: none;
 		}
 
 		.child-menu {
-		    position: absolute;
-		    top: 20px;
-		    left: 0;
-		    background: $theme-bg-dropdown;
-		    padding: 0 15px 10px 15px;
-		    margin-left: 0;
-		    width: 220px;
-		    z-index: 200;
+			background: $theme-bg-dropdown;
+			left: 0;
+			margin-left: 0;
+			padding: 0 15px 10px 15px;
+			position: absolute;
+			top: 20px;
+			width: 220px;
+			z-index: 200;
 
-		    li {
-		    	padding-top: 10px;
-		    }
+			li {
+				padding-top: 10px;
+			}
 		}
-	}
-
-	#navigation ul li:hover .child-menu {
-		display: block;
-		background-color: $theme-bg-dropdown;
-	}
-
-	#navigation ul li:hover > a:before {
-		width: 100%;
-	}
-
-	#navigation > ul > li > a:before {
-		background-color: $theme-tan;
-		bottom: 0;
-		content: "";
-		height: 4px;
-		left: 50%;
-		margin: 0 auto;
-		position: absolute;
-		top: auto;
-		transform: translate(-50%,-47px);
-		transition: width 0.3s ease 0s;
-		width: 0;
 	}
 
 	#sign-in div {
@@ -215,86 +199,85 @@ section {
 	display: inline-block;
 }
 
-#header .site-name a { 
-	color: #fff;
+#header .site-name a {
+	color: #FFF;
 	font-size: 1.33em;
 	text-transform: uppercase;
 }
 
 #header .block-menu {
-	float: right;
 	display: inline-block;
+	float: right;
 	width: auto;
 }
 
 #header ul.menu {
-	position: relative;
 	display: block;
 	float: right;
+	position: relative;
 }
 
 .link-fade {
-	color: $theme-tan;
-
+	color: $theme-base;
 }
 
 .link-fade:hover {
-	color: $theme-tan-light;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	color: $theme-base-light;
+	cursor: pointer;
 	transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    cursor: pointer;
 }
 
 .link-button {
-	background-color: $theme-tan;
+	background-color: $theme-base;
 	border-radius: 30px;
 	color: #313432 !important;
-	padding: 7px 15px;
 	font-family: "gotham_boldregular";
+	padding: 7px 15px;
 }
 
 .link-button:hover {
-	background-color: $theme-tan-light;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	background-color: $theme-base-light;
 	transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
 }
 
 .jumbotron-picture {
 	background-color: transparent;
-	background-image: url("../images/mountains2.jpg");
+	background-image: url(../images/mountains2.jpg);
+	background-position-x: center;;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position-x: center;;
-	top: 0;
 	height: auto;
-	width: 100%;
 	position: relative;
+	top: 0;
+	width: 100%;
 }
 
-.background-box { /* This creates space for the jumbotron picture to be displayed */
+.background-box {
+	background-color: $theme-bg-dark-transparent;
 	height: 700px;
-	z-index: 0;
 	width: 100%;
-	background-color: $theme-bg-dark-transparent; /* overlay over image */
+	z-index: 0;
 }
 
 #content {
+	position: static;
 	top: 100px;
-    position: static;
 }
 
 #highlights {
-	color: #fff;
+	color: #FFF;
 	display: block;
 
 	.content-desc {
-		padding-top: 2em;
-		padding-bottom: 2em;
 		line-height: 2em;
+		padding-bottom: 2em;
+		padding-top: 2em;
 	}
 
 	.gallery {
@@ -302,32 +285,61 @@ section {
 		padding-top: 2em;
 
 		ul {
-			padding: 0;
 			margin: 0 auto;
+			padding: 0;
 		}
-		
+
 		li {
 			display: inline-block;
 			padding: 1em 15px;
 		}
 
 		img {
-			max-width: 200px;
-			height: auto;
 			border-radius: 10px;
+			height: auto;
+			max-width: 200px;
 		}
 
 		a {
-			color: #fff;
+			color: #FFF;
 			font-family: "gotham_boldregular";
 			font-size: 1em;
-			text-transform: uppercase;
-			position: absolute;
-			width: 200px;
 			height: auto;
-		    margin-top: 5%;
+			margin-top: 5%;
+			position: absolute;
 			text-align: center;
+			text-transform: uppercase;
+			width: 200px;
 		}
+	}
+}
+
+#breadcrumbs .portlet-content {
+	background: transparent;
+	border-width: 0;
+	color: $theme-base;
+	margin: 20% 20%;
+	position: absolute;
+	width: 320px;
+
+	h2 {
+		content: "";
+		display: none;
+	}
+
+	.breadcrumb {
+		background: transparent;
+		list-style: none;
+	}
+
+	.breadcrumb li a {
+		color: $theme-base;
+		font-size: 1.5em;
+	}
+
+	.breadcrumb > .active {
+		color: $theme-base;
+		font-size: 1.5em;
 	}
 }
 
@@ -341,136 +353,137 @@ section {
 	.link-button {
 		padding: 10px 25px;
 	}
-
 }
 
+@media screen and (max-width: 400px) {
+	h1 {
+		font-size: 1.4em;
+	}
+
+	h2 {
+		font-size: 1.3em;
+	}
+
+	h3 {
+		font-size: 1.2em;
+	}
+
+	h4 {
+		font-size: 1.2em;
+	}
+
+	h5 {
+		font-size: 1.2em;
+	}
+
+	h6 {
+		font-size: 1.2em
+	}
+
+	p {
+		font-size: 1em;
+		line-height: 1.2;
+	}
+
+	.background-box {
+		height: 300px;
+	}
+}
 
 @media screen and (max-width: 991px) {
-
 	#jw-nav-bar {
-		background: #fff;
-	    bottom: 0;
-	    display: block !important;
-	    height: 100%;
-	    overflow-y: auto !important;
-	    position: fixed;
-	    right: -250px;
-	    top: 0;
-	    width: 250px;
-	    z-index: 1000;
-	    transition: all 0.5s ease-in-out;
-	    -webkit-transition: all 0.5s ease-in-out;
-	    -moz-transition: all 0.5s ease-in-out;
-	    -o-transition: all 0.5s ease-in-out;
-	    padding: 20px;
+		-moz-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+		background: #FFF;
+		bottom: 0;
+		box-sizing: border-box;
+		display: block !important;
+		height: 100%;
+		overflow-y: auto !important;
+		padding: 20px 0;
+		position: fixed;
+		right: -250px; /*set to -250px when ready to hide */
+		top: 0;
+		transition: all 0.5s ease-in-out;
+		width: 250px;
+		z-index: 1000;
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			border-bottom: 1px solid $p-text-color;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding: 10px 0;
+			width: 100%;
+		}
+
+		li:hover {
+			background: $theme-bg-light-1;
+		}
+
+		a {
+			color: $p-text-color;
+			padding: 0 10px;
+		}
+
+		.selected {
+			background: $theme-base-light;
+		}
+
+		a.jw-nav-bar-toggle-close {
+			font-size: 3em;
+			line-height: 0;
+		}
 	}
-	
+
 	.jw-nav-bar-toggle {
 		background-color: transparent;
-		border: none;
-		display: block;
-		padding: 0;
-		margin: 0 15px;
 		border-radius: 0;
+		border-width: 0;
+		display: block;
+		margin: 0 15px;
+		padding: 0;
 	}
 
 	.toggle-icon-bar {
-	display: block;
-	width: 22px;
-	height: 2px;
-	border-radius: 1px;
-	background: $theme-tan;
-	margin: 5px auto;
-}
+		background: $theme-base;
+		border-radius: 1px;
+		display: block;
+		height: 2px;
+		margin: 5px auto;
+		width: 22px;
+	}
+
+	a.jw-nav-bar-toggle:focus {
+		display: none;
+	}
+
+	a.jw-nav-bar-toggle {
+		display: block;
+	}
+
+	#jw-nav-bar:target {
+		right: 0;
+	}
 }
 
 @media screen and (min-width: 992px) {
-
-	.theme-container {
-		margin: 0 18%;
-	}
-	
-	.link-button {
-		padding: 15px 35px;
+	#navigation ul li:hover .child-menu {
+		background-color: $theme-bg-dropdown;
+		display: block;
 	}
 
-	.jw-nav-bar-toggle {
-		display: none;
-	}
-
-}
-/*	selector + sibling {
-		style top or left side
-	}
-
-*/
-
-
-
-/* Old 992px media query
-
-	li li {
-		display: inline;
-		position: relative;
-	}
-
-	ul ul {
-		position: absolute;
-		display: none;
-	}
-
-	li:hover ul {
-		display: inline-block;
-	}
-
-	ul ul ul {
-		left: 100%;
-		top: 0;
-	}
-
-	#header #nav-menu-top {
-		display:inline-block;
-		padding-top: 10px;
-		width: auto;
-	}
-
-	#header div.region-header > .jw-nav-bar {
-		display:inline-block;
-		width: auto;
-		float: right;
-	}
-
-	#header .region-header {
-		margin: auto;
-		width: auto;
-	}
-
-	#nav-menu-top > ul.menu {
-		margin: 0;
-		position: relative;
-	}
-
-	#nav-menu-top > ul.menu > li.menu-item--active-trail a {
-		color: $theme-tan;
-	}
-
-	#nav-menu-top > ul.menu > li.menu-item--active-trail a:before {
+	#navigation ul li:hover > a:before {
 		width: 100%;
 	}
 
-	#nav-menu-top > ul.menu > li {
-		list-style:none;
-		float:left;
-		margin: 0 13px;
-		position: relative;
-	}
-
-	#nav-menu-top > ul.menu > li a {
-		position: relative;
-	}
-
-	#nav-menu-top > ul.menu > li a:before {
-		background-color: $theme-tan;
+	#navigation > ul > li > a:before {
+		background-color: $theme-base;
 		bottom: 0;
 		content: "";
 		height: 4px;
@@ -478,76 +491,18 @@ section {
 		margin: 0 auto;
 		position: absolute;
 		top: auto;
-		transform: translate(-50%,-50px);
+		transform: translate(-50%, -47px);
 		transition: width 0.3s ease 0s;
 		width: 0;
 	}
-	
 
-	#nav-menu-top ul.menu li.menu-item--expanded ul { 
-		display: none;
-	}
-
-	#nav-menu-top ul.menu li.menu-item--expanded:hover > ul {
+	#navigation ul li:hover ul {
 		display: block;
-		background-color: $theme-bg-dropdown;
-		float: left;
-		padding: 0;
-		padding: 0 15px 10px 15px;
-		width: 150px;
-		position: absolute; /*debug 
-
-		li {
-			padding-top: 0.8em;
-			float: left;
-			display: block;
-			font-size: 0.8em
-		}
 	}
 
-	#nav-menu-top ul.menu ul.menu {
-		display: none;
+	#navigation ul li.selected a:before {
+		width: 100%;
 	}
-
-	#login {
-		padding-top: 10px;
-		margin-left: 15px;
-	}
-
-	#login .menu-item-child {
-		display: inline-block;
-	}
-		/* End Styles for Header 
-
-		/* Start Styles for Content 
-	#content { /* note---- this might need to be in global scope and not within media breakpoint 
-		padding: 15px;
-		color: $p-text-color;
-
-		h1,
-		h2 {
-			color: $theme-title-text;
-			font-family: "gotham_bookregular";
-		}
-
-		h3,
-		h4 {
-			color: $theme-title-text;
-			font-family: "gotham_lightregular";
-		}
-
-		p {
-			color: $p-text-color;
-			font-family: "gotham_bookregular";
-		}
-	}
-
-	.row {
-		padding-top: 1em;
-		padding-bottom: 1em;
-	}
-
-
 
 	.grid-left {
 		text-align: right;
@@ -557,32 +512,30 @@ section {
 		text-align: left;
 	}
 
-	div.row1::before {
-	    content: "";
-	    background: $theme-tan;
-	    width: 1px;
-	    height: 200px;
-	    position: absolute;
-	    bottom: -60%;
-	    left: 50%;
+	.jw-nav-bar-toggle {
+		display: none;
 	}
 
-	div.row2::after {
-		content: "";
-	    background: $theme-tan;
-	    width: 200px;
-	    height: 1px;
-	    position: absolute;
-	    bottom: 0;
-	    left: 50%;
-	    margin-left: -100px;
+	.link-button {
+		padding: 15px 35px;
 	}
 
-	.gallery {
-		display: inline-flex;
+	.theme-container {
+		margin: 0 18%;
+	}
+
+	a.jw-nav-bar-toggle-close {
+		display: none;
+		visibility: hidden;
+	}
+
+	.portlet-content .theme-container {
+		margin: 0 2%;
+	}
+}
+
+/*	selector + sibling {
+		style top or left side
 	}
 
 */
-
-
-
