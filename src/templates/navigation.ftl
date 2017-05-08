@@ -1,7 +1,7 @@
 <nav class="${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
-	<ul aria-label="<@liferay.language key="site-pages" />" role="menubar">
+	<ul aria-label="<@liferay.language key='site-pages' />" role="menubar">
 		<#list nav_items as nav_item>
 			<#assign
 				nav_item_attr_has_popup = ""
@@ -38,6 +38,28 @@
 
 							<li ${nav_child_attr_selected} class="${nav_child_css_class}" id="layout_${nav_child.getLayoutId()}" role="presentation">
 								<a aria-labelledby="layout_${nav_child.getLayoutId()}" href="${nav_child.getURL()}" ${nav_child.getTarget()} role="menuitem">${nav_child.getName()}</a>
+								<#if nav_child.hasChildren()>
+									<ul class="child-menu" role="menu">
+										<#list nav_child.getChildren() as nav_grandchild>
+											<#assign
+												nav_grandchild_attr_selected = ""
+												nav_grandchild_css_class = ""
+											/>
+
+											<#if nav_child.isSelected()>
+												<#assign
+													nav_grandchild_attr_selected = "aria-selected='true'"
+													nav_grandchild_css_class = "selected"
+												/>
+											</#if>
+										<li> <a>${nav_grandchild.getName()}</a>
+										<#--<li ${nav_grandchild_attr_selected} class="${nav_grandchild_css_class}" id="layout_${nav_grandchild.getLayoutID()}" role="presentation">
+											<a aria-labelledby="layout_${nav_grandchild.getLayoutID()}" href="$nav_grandchild.getURL()}" ${nav_grandchild.getTarget()} role="menuitem">${nav_grandchild.getName()}</a>
+										-->
+										</li>
+										</#list>
+									</ul>
+								</#if> 
 							</li>
 						</#list>
 					</ul>
