@@ -22,6 +22,7 @@
 				<a aria-labelledby="layout_${nav_item.getLayoutId()}" ${nav_item_attr_has_popup} href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem"><span><@liferay_theme["layout-icon"] layout=nav_item_layout /> ${nav_item.getName()}</span></a>
 
 				<#if nav_item.hasChildren()>
+					<button class="child-menu-toggle float-right">&#8250;</button>
 					<ul class="child-menu" role="menu">
 						<#list nav_item.getChildren() as nav_child>
 							<#assign
@@ -29,7 +30,7 @@
 								nav_child_css_class = ""
 							/>
 
-							<#if nav_item.isSelected()>
+							<#if nav_child.isSelected()>
 								<#assign
 									nav_child_attr_selected = "aria-selected='true'"
 									nav_child_css_class = "selected"
@@ -39,6 +40,7 @@
 							<li ${nav_child_attr_selected} class="${nav_child_css_class}" id="layout_${nav_child.getLayoutId()}" role="presentation">
 								<a aria-labelledby="layout_${nav_child.getLayoutId()}" href="${nav_child.getURL()}" ${nav_child.getTarget()} role="menuitem">${nav_child.getName()}</a>
 								<#if nav_child.hasChildren()>
+									<button class="child-menu-toggle float-right">&#8250;</button>
 									<ul class="child-menu" role="menu">
 										<#list nav_child.getChildren() as nav_grandchild>
 											<#assign
@@ -46,16 +48,14 @@
 												nav_grandchild_css_class = ""
 											/>
 
-											<#if nav_child.isSelected()>
+											<#if nav_grandchild.isSelected()>
 												<#assign
 													nav_grandchild_attr_selected = "aria-selected='true'"
 													nav_grandchild_css_class = "selected"
 												/>
 											</#if>
-										<li> <a>${nav_grandchild.getName()}</a>
-										<#--<li ${nav_grandchild_attr_selected} class="${nav_grandchild_css_class}" id="layout_${nav_grandchild.getLayoutID()}" role="presentation">
-											<a aria-labelledby="layout_${nav_grandchild.getLayoutID()}" href="$nav_grandchild.getURL()}" ${nav_grandchild.getTarget()} role="menuitem">${nav_grandchild.getName()}</a>
-										-->
+										<li ${nav_grandchild_attr_selected} class="${nav_grandchild_css_class}" id="layout_${nav_grandchild.getLayoutId()}" role="presentation">
+											<a aria-labelledby="layout_${nav_grandchild.getLayoutId()}" href="${nav_grandchild.getURL()}" ${nav_grandchild.getTarget()} role="menuitem">${nav_grandchild.getName()}</a>
 										</li>
 										</#list>
 									</ul>

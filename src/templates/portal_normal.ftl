@@ -49,33 +49,26 @@
 					<a href="localhost:8080/" rel="home" title="Home">${site_name}</a>
 				</div>
 			</div>
-				<nav id="login">
-					<div class="float-right">
-						<#if !is_signed_in>
-							<a class="link-button" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow"><div id="sign_in_text">${sign_in_text}</div></a>
-						</#if>
-						<a class="float-right jw-nav-bar-toggle" href="#jw-nav-bar">
-							<span class="toggle-icon-bar"></span>
-							<span class="toggle-icon-bar"></span>
-							<span class="toggle-icon-bar"></span>
-						</a>
-					</div>
+			<nav id="login">
+				<div class="float-right">
+					<#if !is_signed_in>
+						<a class="link-button" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow"><div id="sign_in_text">${sign_in_text}</div></a>
+					</#if>
+					<a class="float-right jw-nav-bar-toggle">&#x2261;</a>
+				</div>
 
-					<!-- Dynamic navigation menu -->
-					<div class="float-right" id="jw-nav-bar">
+				<!-- Dynamic navigation menu -->
+				<div class="float-right" id="jw-nav-bar">
 
-						<#if has_navigation && is_setup_complete>
-							<a class="jw-nav-bar-toggle-close" href=".">
-								<span class="jw-nav-bar-toggle-close">&#x2261;</span>
-							</a>
-							<#include "${full_templates_path}/navigation.ftl" />
-						</#if>
+					<#if has_navigation && is_setup_complete>
+						<a class="jw-nav-bar-toggle">&#x2261;</a>
+						<#include "${full_templates_path}/navigation.ftl" />
+					</#if>
 
-					</div>
-					<!-- /Dynamic navigation menu -->
+				</div>
+				<!-- /Dynamic navigation menu -->
 
-				</nav>
-			<!--</div>-->
+			</nav>
 		</div>
 	</header>
 
@@ -174,21 +167,17 @@
 	</section>
 
 	<section id="portletSect">
+		<#if selectable>
+			<@liferay_util["include"] page=content_include />
+		<#else>
+			${portletDisplay.recycle()}
 
-			<p> This should be after breadcrumbs and below this should be area for movable modules</p>
+			${portletDisplay.setTitle(the_title)}
 
-			<#if selectable>
+			<@liferay_theme["wrap-portlet"] page="portlet.ftl">
 				<@liferay_util["include"] page=content_include />
-			<#else>
-				${portletDisplay.recycle()}
-
-				${portletDisplay.setTitle(the_title)}
-
-				<@liferay_theme["wrap-portlet"] page="portlet.ftl">
-					<@liferay_util["include"] page=content_include />
-				</@>
-			</#if>
-
+			</@>
+		</#if>
 	</section>
 
 	<!--======================================================== footer ========================================================-->
@@ -207,7 +196,33 @@
 <!-- inject:js -->
 <!-- endinject -->
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#jw-nav-bar").css("right", "-250px");
+			$("a.jw-nav-bar-toggle").click(function() {
+				if (!$("#jw-nav-bar").hasClass("menuOpen")) {
+					$("#jw-nav-bar").addClass("menuOpen");
+					$("#jw-nav-bar").css("right", "0");
+				} else {
+					$("#jw-nav-bar").removeClass("menuOpen");
+					$("#jw-nav-bar").css("right", "-250px");
+					
+				}
+			});
+			$("button.child-menu-toggle").click(function() {	
+				if ($("ul.child-menu").hasClass("menuOpen")) {
+					$("ul.child-menu").removeClass("menuOpen");
+					$("ul.child-menu").removeClass("child-menu-open");
+					$(this).removeClass("child-menu-toggle-open");
+				} else {
+					$("ul.child-menu").addClass("menuOpen");
+					$("ul.child-menu").addClass("child-menu-open");
+					$(this).addClass("child-menu-toggle-open");
+				}
+
+			});
+		});
+	</script>
 </body>
 
-</html>
+</html>	
