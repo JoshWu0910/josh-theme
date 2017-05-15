@@ -39,18 +39,31 @@ AUI.$( '#child-menu-dropdown-2' ).click(
     }
 );
 
+AUI.$( '.btn-btt' ).click(
+    function() {
+        AUI.$( 'html, body' ).animate( 
+            { scrollTop : 0 }, 
+            700
+        );
+        return false;
+    }
+);
+
 AUI().ready(
     'scroll-transparency',
     function( A ) {
-        A.on('scroll',function() {
+        A.on( 'scroll', function() {
             var scrollY = window.pageYOffset;
-            var banner = $('#banner');
+            var buttonBtt = AUI.$( '.btn-btt' );
+            var banner = AUI.$( '#banner' );
 
-            if ( scrollY > 0 && banner.hasClass('banner-unscrolled')) {
-                banner.toggleClass('banner-scrolled banner-unscrolled');
-            } else if ( scrollY === 0 && banner.hasClass('banner-scrolled')) {
-                banner.toggleClass('banner-scrolled banner-unscrolled');
+            if ( scrollY > 0 && banner.hasClass( 'banner-unscrolled' ) ) {
+                banner.toggleClass( 'banner-scrolled banner-unscrolled' );
+                buttonBtt.fadeIn();
+            } else if ( scrollY === 0 && banner.hasClass( 'banner-scrolled' ) ) {
+                banner.toggleClass( 'banner-scrolled banner-unscrolled' );
+                buttonBtt.fadeOut();
             }
-        });
+        } );
     }
 );
