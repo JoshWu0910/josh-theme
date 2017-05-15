@@ -43,6 +43,10 @@ html {
 	color: #FFF;
 }
 
+.color-base-theme {
+	color: $theme-base;
+}
+
 body {
 	font-family: "gotham_bookregular";
 	font-size: 15px;
@@ -368,6 +372,41 @@ section {
 }
 
 #portlet_com_liferay_login_web_portlet_LoginPortlet {
+}
+
+a.btn-btt {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	background: $theme-base;
+	border-radius: 50%;
+	bottom: 30px;
+	color: #FFF;
+	display: none;
+	font-size: 0;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	right: 30px;
+	text-align: center;
+	width: 50px;
+	z-index: 200;
+
+	&:after {
+		content: "\25B2";
+		display: inline-block;
+		font-size: 28px;
+		height: 50px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		right: 0;
+		width: 50px;
+	}
+
+	&:hover, &:focus {
+		background: $theme-bg-dark;
+		color: #FFF;
+	}
 }
 
 @media screen and (min-width: 400px) {
