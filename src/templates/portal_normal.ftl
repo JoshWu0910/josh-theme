@@ -87,7 +87,7 @@
 			<h1 class="hide-accessible">${the_title}</h1>
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1>This is my <span style="color: #DAB485">Lapurd</span> theme</h1>
+					<h1>This is my <span class="color-base-theme">Lapurd</span> theme</h1>
 					<p>
 					Donec consectetur mauris justo, vel scelerisque nunc dictum sed. Ut sodales arcu sed bibendum egestas. Proin lorem lacus, venenatis id enim at, sagittis eleifend odio. Ut porta blandit metus ac molestie. Ut lacinia nibh vitae felis porttitor, a maximus tortor sollicitudin. Aliquam sit amet sapien ac tellus efficitur vestibulum. Nulla elementum porta ante et facilisis.
 					</p>
@@ -195,7 +195,7 @@
 
 		</p>
 	</footer>
-
+	<a class="btn-btt" href="#">Back to top</a>
 </div>
 
 <@liferay_util["include"] page=body_bottom_include />
