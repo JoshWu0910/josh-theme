@@ -17,15 +17,5 @@
 			<default-portlet-decorator>true</default-portlet-decorator>
 			<portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
 		</portlet-decorator>
-
-		<settings>
-			<setting configurable="true" key="imagesPath" type="text" value="../images/"
-
-
-
-			/>
-		</settings>
-
-
 	</theme>
 </look-and-feel>
